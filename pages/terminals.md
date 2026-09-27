@@ -18,14 +18,14 @@ term-modern
 
 ## Just tell me what to install
 
-**[SyncTERM](https://syncterm.bbsdev.net/)**, on Windows, macOS or Linux. It is
+**[SyncTERM](https://sourceforge.net/projects/syncterm/)**, on Windows, macOS or Linux. It is
 made for joining boards: it speaks ANSI and CP437 properly, handles file
 transfers, keeps a dialling directory, and understands `telnet://` links so
 clicking an address on this site actually works. If you install one thing,
 install this.
 
 ::: next
-[Get SyncTERM](https://syncterm.bbsdev.net/)
+[Get SyncTERM](https://sourceforge.net/projects/syncterm/)
 :::
 
 On a phone, **TERMinator** on
@@ -48,7 +48,7 @@ its own section further down.
 
 | Client | Platform | Worth knowing |
 |---|---|---|
-| [SyncTERM](https://syncterm.bbsdev.net/) | Windows, macOS, Linux | The default recommendation. ANSI, CP437, transfers, dialling directory. |
+| [SyncTERM](https://sourceforge.net/projects/syncterm/) | Windows, macOS, Linux | The default recommendation. ANSI, CP437, transfers, dialling directory. |
 | [NetRunner](https://www.mysticbbs.com/downloads.html) | Windows, Linux | From the Mystic BBS author. Good ANSI. No Mac or Android build. |
 | [mTelnet](https://mt32.bbses.info/) | Windows | Small, fast, built for BBSes. |
 | [MuffinTerm](https://apps.apple.com/us/app/muffinterm/id1583236494) | iOS, macOS | Handles PETSCII as well as ANSI. |

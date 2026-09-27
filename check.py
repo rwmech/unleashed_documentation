@@ -188,6 +188,13 @@ def main():
                 broken.append(f"{n}: {href}")
     check("every link names a guide, a directory page or a page of the site"
           + (f"  <- {broken[:4]}" if broken else ""), not broken)
+    # SyncTERM's own site stopped answering in September 2026; its current
+    # home is its SourceForge project. A link to the old one is a dead
+    # "Get SyncTERM" button (Rob found it).
+    dead = [n for n, t in texts.items()
+            if re.search(r"syncterm\.(bbsdev\.)?net", t, re.I)]
+    check("no link to SyncTERM's old, dead site" + (f"  <- {dead}" if dead else ""),
+          not dead)
 
     print("Words")
     dash = [n for n, t in texts.items() if "—" in t]

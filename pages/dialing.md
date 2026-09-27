@@ -14,7 +14,7 @@ Here is why, and the fixes, in the order to try them.
 
 ## The short version
 
-Install [SyncTERM](https://syncterm.bbsdev.net/) and let its installer take the
+Install [SyncTERM](https://sourceforge.net/projects/syncterm/) and let its installer take the
 telnet association. It is the right app for joining boards anyway, it
 understands `telnet://` links including a non-standard port, and it saves
 whatever was registered before so uninstalling puts it back.
@@ -213,7 +213,7 @@ and backslashes in a URI can split it across several arguments.
 - [Install Telnet Client](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-r2-and-2008/cc771275(v=ws.10))
 - [Tera Term: associate with the telnet protocol](https://teratermproject.github.io/manual/5/en/usage/tips/telnet_protocol.html)
 - [Tera Term command line, including the port 23 negotiation note](https://teratermproject.github.io/manual/5/en/commandline/teraterm.html)
-- [SyncTERM](https://syncterm.bbsdev.net/) and its [manual](https://syncterm.bbsdev.net/Manual.html)
+- [SyncTERM, on SourceForge](https://sourceforge.net/projects/syncterm/)
 - [SyncTERM Windows installer, registry writes](https://github.com/bbs-io/syncterm-windows/blob/master/SyncTERM-Setup.template.iss)
 - [PuTTY manual, telnet:// URLs](https://the.earth.li/~sgtatham/putty/latest/htmldoc/Chapter3.html)
 - [RFC 4248, the telnet URI scheme](https://www.rfc-editor.org/rfc/rfc4248.html)
