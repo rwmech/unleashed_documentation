@@ -210,8 +210,9 @@ Passwords on this page:
 - A password already set shows as `********`, and is only written when you type
   a new one.
 - An empty password switches that level off.
-- Use passwords you use nowhere else. Calls to a BBS are not encrypted, which
-  [the privacy page](/docs/privacy) explains in plain terms.
+- Use passwords you use nowhere else. Calls over telnet are not encrypted, which
+  [the privacy page](/docs/privacy) explains in plain terms; on an ESP32-S3
+  board, [calls over SSH](/docs/terminals#connect-with-ssh) are.
 
 What a co-sysop may do is a table in the board's settings file, not a CONFIG
 page. As shipped, both co-sysop levels may list who is on with their addresses,

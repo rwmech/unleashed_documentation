@@ -68,6 +68,35 @@ default and it renders ANSI poorly. Use something else.
 > keystroke in the clear, including your password. Never reuse a password on a
 > telnet board. [What that risks](/docs/privacy).
 
+<!-- Site 1.5.4 / docs (Rob, 2026-09-28: "SSH is shipped ... Let everyone know"). Every fact from the firmware's COMMANDS.md on main (the SSH bullets near the top, and the ssh_port row of the settings table) and CHANGELOG 1.1.2: SSH on the S3 boards from 1.1.2; the shared port 6400 for clients that speak first (OpenSSH on Linux, macOS and Windows, PuTTY, Termius); ssh_port 6422 as shipped, where the board speaks first, for SyncTERM 1.9 and older, 0 turns it off, CONFIG network's last row "SSH port (SyncTERM)"; the SSH user name is the handle, an account's handle asks for its password and any other name lands at the ordinary handle prompt; host keys Ed25519 and ECDSA made on the board at its first start, fingerprints shown to staff in SYS and HARDWARE, new keys after an erase or a factory reset. The classic ESP32 boards have no SSH (BBS_HAS_SSH is in the S3 profiles only). -->
+## Connect with SSH
+
+**SSH is here: encrypted connections on every ESP32-S3 board, from firmware
+1.1.2.** Over [[SSH]], everything between your computer and the board is
+scrambled on the way, your password included. Telnet stays open on every
+board, for the machines that cannot encrypt, and boards on a classic ESP32
+take telnet only.
+
+```
+ssh -p 6422 yourhandle@board.example.com
+```
+
+- **Port 6422 is SSH's own.** There the board speaks first, which SyncTERM
+  1.9 and older need: use 6422 with SyncTERM, never 6400. The sysop can move
+  it or turn it off (0) in `CONFIG network`, on the **SSH port** row.
+- **The telnet port takes SSH too**, 6400 as shipped, for apps that speak
+  first: OpenSSH (the `ssh` command on Linux, macOS and Windows), PuTTY and
+  Termius. `ssh -p 6400 yourhandle@board.example.com` works with those.
+- **The SSH user name is your handle.** A handle with an account asks for
+  that account's password, and you arrive logged in. Any other name gets in
+  with no password asked and lands at the ordinary login prompt, where you
+  can sign up or visit as a guest.
+- **The first time, your app asks whether to trust the board's key.** The
+  key is made on the board at its first start. To check it, ask the sysop,
+  who sees its fingerprints in `SYS` and `HARDWARE`. If your app later warns
+  that the key has changed, ask the sysop why before you trust it again: an
+  erase or a factory reset makes new keys.
+
 ## Chromebooks
 
 ::: art

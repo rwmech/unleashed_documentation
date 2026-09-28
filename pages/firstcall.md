@@ -54,6 +54,8 @@ instead. Three wrong tries and the board hangs up.
 > Telnet has no encryption. Your password crosses the internet in the clear
 > and so does everything you type. Use a password you use nowhere else, and
 > say what you would say in public. [The longer version is here](/docs/privacy).
+> On an ESP32-S3 board you can [call over SSH](/docs/terminals#connect-with-ssh)
+> instead, and then it is encrypted.
 
 ## Then you are in
 

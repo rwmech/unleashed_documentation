@@ -37,7 +37,10 @@ you can expose something you never meant to.
 > clear, and anybody positioned between a visitor and your board can read all
 > of it. That is a property of the protocol, not a bug in this software, and
 > it was true of every board in 1985 too. Tell the people who join, and never
-> reuse a password on a telnet board.
+> reuse a password on a telnet board. A board on an ESP32-S3 also takes
+> [SSH](/docs/terminals#connect-with-ssh), which is encrypted, on the same port
+> and on its own, 6422 as shipped: forward that one too if you want visitors
+> from outside to use it with SyncTERM.
 
 - **You will be scanned within minutes.** Every address on the internet is
   swept continuously by automated scanners. This is normal and not personal,

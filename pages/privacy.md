@@ -6,8 +6,8 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 # The real risks of open communications
 
-A [[BBS]] carries everything in the clear. This page says what that means, what it
-does not mean, and what to do about it. It is longer than the one
+A [[BBS]] reached over [[telnet]] carries everything in the clear. This page says
+what that means, what it does not mean, and what to do about it. It is longer than the one
 paragraph on the front page because the short version leaves people to guess,
 and people guess badly in both directions.
 
@@ -18,11 +18,18 @@ nickname, your
 password, what you type in the chat room, what you read. Anybody who can see
 the traffic on the path between you and the board can read all of it.
 
-There is no encryption to turn on. The protocol is [[telnet]], from 1969, and the
+Telnet has no encryption to turn on. The protocol is from 1969, and many of the
 machines this is built for cannot do much better: somebody has made a stock
 Commodore 64 finish a modern TLS handshake, and it takes
-[about half an hour](https://github.com/JC-000/c64-https). The honest move is to
-say so rather than to add a padlock that means nothing.
+[about half an hour](https://github.com/JC-000/c64-https). So every board keeps
+telnet open for them, and says so rather than adding a padlock that means
+nothing.
+
+**If your computer can use [[SSH]], there is a real padlock.** A board on an
+ESP32-S3 takes SSH from firmware 1.1.2, and over SSH everything between you and
+the board is encrypted, your password included. Nobody on the path can read
+it. To call that way, see [connect with SSH](/docs/terminals#connect-with-ssh).
+The rest of this page is about telnet.
 
 ## Who can see it
 
@@ -74,6 +81,8 @@ rather than a plan.
   Card numbers, other passwords, an address you would not give a stranger.
 - On a network you do not trust, assume somebody could be looking. Open Wi-Fi is
   the realistic case.
+- Call over [[SSH]] when the board and your computer can both do it. Then
+  nobody on the path can read what you type.
 - If a conversation genuinely has to be private, this is the wrong tool. Put
   the board behind a VPN, or keep it on your own network, or use something
   built for secrecy.
