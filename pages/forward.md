@@ -99,7 +99,7 @@ second. One board per port.
 ::: from 1.1.0
 The way that works on every router is to give each board its own port to
 listen on, so every forward is the same number outside and in. From firmware
-1.1.0 that is **Port** on [the network page of `CONFIG`](/docs/setup#network),
+1.1.0 that is **Port** on [the network page of `CONFIG`](/docs/config#network),
 used from the next restart.
 
 So set the second board's **Port** to 6401, restart it, and forward 6401 to
@@ -110,7 +110,7 @@ A router that can send one outside number to a different number inside gives
 you the other way: leave both boards on 6400 and forward 6401 outside to 6400
 on the second board. Then the second board has to tell the directory which
 number callers dial, which is **Outside** on [the announce page of
-`CONFIG`](/docs/setup#announce): the port callers dial from the internet.
+`CONFIG`](/docs/announce): the port callers dial from the internet.
 :::
 
 ::: until 1.1.0
@@ -124,6 +124,26 @@ on the announce page of `CONFIG`: set it to 6401.
 This directory lists one board per internet address by itself. A second board
 from the same address waits for the person who runs the directory to let it
 through.
+
+<!-- New for the guides' setup hub (2026-09-29, tty-ux's sysop guide spec). The directory learning the address from the announce is the listing's X-Seen-Address (PROTOCOL.md); DNS name and Outside are announce's own fields, on /docs/announce. The router and eero notes are forward-netgear.md's and forward-mesh.md's. -->
+## A name that follows your address
+
+Unless you pay your internet provider for a fixed address, the one your home
+has on the internet changes now and then. Anybody who wrote down the old
+numbers dials nothing.
+
+- **The directory keeps up by itself.** A listed board tells the directory
+  it is still there every few minutes, and the directory lists it at the
+  address it hears from, so a listing follows a new address with no help.
+- **For callers who dial you directly,** give them a name instead of the
+  numbers: dynamic DNS. A dynamic DNS service gives you a name, and a small
+  program keeps it pointed at your current address. Many routers have one
+  built in, under a name like Dynamic DNS or DDNS; on eero it needs eero
+  Plus, as [its page](/docs/forward-mesh) says.
+- **Put the name in the listing** too: **DNS name** on [the directory listing's
+  page](/docs/announce) makes the directory show your name rather than the
+  numbers. When your router forwards a different number outside than the
+  board's **Port**, **Outside** on the same page is the number callers dial.
 
 ## Pick your router
 

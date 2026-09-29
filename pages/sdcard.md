@@ -22,7 +22,7 @@ Firmware 1.1.0 gives the card one more job: switch on nightly backups and the
 board backs itself up to the card at 03:00 every night, keeping the last seven.
 :::
 ::: from 1.1.0
-The card can also keep the board's backups: switch on nightly backups and the
+The card can also keep the board's backups: [switch on nightly backups](#settings) and the
 board backs itself up to the card at 03:00 every night, keeping the last seven.
 :::
 
@@ -161,3 +161,66 @@ the card's screens into the board itself, after checking they fit in its
 than installing half of them. `SCREENS INSTALL STOCK` puts the stock set back,
 and so does the next firmware update.
 :::
+
+<!-- Moved whole from setup.md's "files" and "sd" (guides, 2026-09-29, tty-ux's sysop guide spec). -->
+## Settings
+
+Every plugin page starts with the same four fields, which [the plugin
+pages](/docs/config#the-plugin-pages) explain.
+
+### files
+
+File areas: folders on the SD card that callers can list, download from and
+upload to. It needs a card, and without one the page is there but the plugin
+does not start. Read, Write and Admin are `all`, `staff` and `sysop` as
+shipped.
+
+::: art
+shot-config-files
+:::
+
+There are eight areas, and each one is a button: Enter opens it as a page of its
+own.
+
+::: art
+shot-config-area
+:::
+
+| Field | What it does |
+|---|---|
+| **Path** | The folder on the card, up to 48 characters. It is never shown to callers, and the board creates it if it is not there. |
+| **Name** | What callers see, up to 24 characters. |
+| **Read** | Who sees the area in the list. Unset, the plugin's Read. |
+| **Upload** | Who may put files in and describe them. Unset, the plugin's Write. |
+| **Download** | Who may take files out. Unset, this area's Read. |
+| **Delete** | Who may remove files and approve or reject uploads. Unset, the plugin's Admin. |
+
+An upload is invisible to everybody but staff until somebody with Delete
+approves it. Saving an area writes all four levels down, so what you saw on the
+form is what the area runs under from then on.
+
+### sd
+
+The SD card. On as shipped, and the sysop's alone. With no card it tries once at
+start and then costs nothing.
+
+- **CS pin**: Chip select. GPIO5 does not stop the board starting with a card
+  fitted; 4 is there if you would rather use a pin with no job at boot. Takes
+  0 to 33; as shipped, `5`.
+- **MOSI pin**: Data to the card. Takes 0 to 33; as shipped, `23`.
+- **CLK pin**: The clock. Takes 0 to 33; as shipped, `18`.
+- **MISO pin**: Data from the card. Takes 0 to 39; as shipped, `19`.
+- **Bus kHz**: The bus speed. Slower is steadier on long jumper wires. Takes
+  400 to 40000; as shipped, `20000`.
+- **Screens**: Whether screens on the card replace the board's own, file by
+  file. Takes yes or no; as shipped, `yes`.
+- **Nightly**: From firmware 1.1.0, a full backup onto the card at 03:00,
+  keeping the last seven. Takes yes or no; as shipped, `no`.
+
+The card holds file areas, the forums and your own screens. The accounts, the
+settings and the caller log stay on the board, so a card that fails loses none
+of them. On the ESP32 dev board the wiring is [above](#the-wiring); the other
+boards have a slot of their own. What happens to your own screens when the
+card is out is under [screens of your own](#screens-of-your-own).
+
+Back to [Set up your BBS](/docs/setup).

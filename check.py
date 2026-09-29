@@ -43,7 +43,10 @@ passed = failed = 0
 
 # The blocks the directory renders on a guide (sitekit's own: art, cta,
 # next and cards; and the release gates, from and until).
-BLOCKS = ("art", "cta", "next", "cards", "hero", "skins")
+BLOCKS = ("art", "cta", "next", "cards", "hero", "skins",
+          # The setup hub's (sitekit 1.3.0): the numbered steps, the wrap
+          # that puts them beside the drawing, and the Going public banner.
+          "guide", "guidetop", "gopublic")
 GATE = re.compile(r"^::: (from|until) \S+( \d+\.\d+\.\d+)?\s*$")
 # The drawings the directory registers for the guides (server.py, ART).
 ART = ("firstcall", "setup-steps", "term-modern", "term-chromebook", "term-commodore",

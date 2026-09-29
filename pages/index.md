@@ -24,8 +24,8 @@ in [its own repository](https://github.com/rwmech/unleashed_documentation).
 
 ## Running a board
 
-- [Set up your BBS](/docs/setup): every setting, with the board's own
-  screens.
+- [Set up your BBS](/docs/setup): five steps to a board online, then a
+  guide for each part.
 - [Let people outside your home join](/docs/forward): opening your board to
   the internet, with a guide for
   [ASUS](/docs/forward-asus), [NETGEAR](/docs/forward-netgear),

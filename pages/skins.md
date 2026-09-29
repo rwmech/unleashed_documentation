@@ -351,7 +351,7 @@ top to bottom:
 | `name` | The board's name | The Rusty Antenna |
 | `address` | The address and port callers dial | 192.168.0.40:6400 |
 | `uptime` | How long since the board started | up 3d 4h |
-| `callers` | Callers on, out of the lines there are | Callers 2/10 |
+| `callers` | Callers on, out of the lines there are | Callers 2/11 |
 | `today` | Calls since midnight | 14 calls today |
 | `heap` | Free memory | 84K free |
 | `card` | Free space on the SD card | card 29 GB free |
