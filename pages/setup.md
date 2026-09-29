@@ -34,28 +34,29 @@ Building it yourself? [Build from source](https://unleashedbbs.com/build#for-dev
 #sd
 :::
 
+<!-- One card a line: title | url | description | tag | #id | icon (sitekit's CARD_ICONS). Tags are one form, "<thing> required" or "Firmware x.y.z+" (Rob, 2026-09-29). -->
 ::: cards
-Chat and mail | /docs/chat | The chat room, private messages and their limits. | | #chat
-Forums | /docs/forums | Topics, and who may read, start and reply. | Needs a card | #forums
-Files and the SD card | /docs/sdcard | File areas, uploads, and the card's own jobs. | Needs a card | #files
-Information pages | /docs/info | The sysop's pages: INFO, and /i0 to /i9 in chat. | | #info
+Chat and mail | /docs/chat | The chat room, private messages and their limits. | | #chat | chat
+Forums | /docs/forums | Topics, and who may read, start and reply. | SD card required | #forums | forums
+Files and the SD card | /docs/sdcard | File areas, uploads, and the card's own jobs. | SD card required | #files | sdcard
+Information pages | /docs/info | The sysop's pages: INFO, and /i0 to /i9 in chat. | | #info | info
 :::
 
 ### Hardware you add
 
 ::: cards
-Camera and photos | /docs/camera | A caller types SNAPSHOT and downloads the picture. | Camera boards
-Sats | https://unleashedbbs.com/satellites | A camera or a door on a small box of its own, over the air. | From 1.2.0
-Lights | /docs/lights | A drive light and a strip of pixels, for a board in a case. | | #lights
-Screens and skins | /docs/skins | Dress a board's screen up as another machine. | S3 boards
+Camera and photos | /docs/camera | SNAPSHOT from a built-in camera or a camera sat. | Camera required | | camera
+Sats | https://unleashedbbs.com/satellites | A camera or a door on a small box of its own, over the air. | Firmware 1.2.0+ | | sat
+Lights | /docs/lights | A drive light and a strip of pixels, for a board in a case. | | #lights | lights
+Screens and skins | /docs/skins | Dress a board's screen up as another machine. | S3 board required | | screen
 :::
 
 ### Keeping it running
 
 ::: cards
-Backups | /docs/backups | The settings, accounts and screens in one zip. | | #backup
-The directory listing | /docs/announce | Put your board on the list, so callers can find it. | | #announce
-SSH | /docs/ssh | Encrypted calls, the SSH port and the board's keys. | S3 boards
+Backups | /docs/backups | The settings, accounts and screens in one zip. | | #backup | backup
+The directory listing | /docs/announce | Put your board on the list, so callers can find it. | | #announce | listing
+SSH | /docs/ssh | Encrypted calls, the SSH port and the board's keys. | S3 board required | | lock
 :::
 
 ## Going public
