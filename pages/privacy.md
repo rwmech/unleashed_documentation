@@ -7,9 +7,9 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 # The real risks of open communications
 
 A [[BBS]] reached over [[telnet]] carries everything in the clear. This page says
-what that means, what it does not mean, and what to do about it. It is longer than the one
-paragraph on the front page because the short version leaves people to guess,
-and people guess badly in both directions.
+what that means, what it does not mean, and what to do about it, at length,
+because the short version leaves people to guess, and people guess badly in
+both directions.
 
 ## What "in the clear" means
 

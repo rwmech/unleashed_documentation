@@ -8,7 +8,8 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 > [!NOTE]
 > **The Waveshare S3 needs none of this.** Its card slot is on the board:
-> [the S3](https://unleashedbbs.com/hardware#waveshare-esp32-s3-lcd-1-47).
+> [the S3](https://unleashedbbs.com/hardware#waveshare-esp32-s3-lcd-1-47). So
+> is every other ESP32-S3 board's and camera board's.
 
 Optional, and for the ESP32 dev board. A board with no card is a complete
 board: chat, mail, accounts, screens, the caller log, a directory listing, the
@@ -150,9 +151,7 @@ Set `screens = no` in the config if you would rather the card were ignored
 for this.
 
 Your screens are played straight from the card, and nothing copies them into
-the board. Pull the card and the board goes back to the stock screens it
-shipped with: nothing breaks, but your own screens are gone until the card is
-back.
+the board, so without the card they are gone until it is back.
 
 <!-- SCREENS INSTALL (Rob, site 1.2.9): from firmware 1.1.1, so gated on it; the words are Rob's description of the command, not yet checked against a build. The 256 KB is the board's storage partition (partitions.csv), which holds the screens. -->
 ::: from 1.1.1

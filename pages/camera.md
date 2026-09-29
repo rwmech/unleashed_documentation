@@ -47,7 +47,9 @@ camera-snap
   [ESP32-CAM](https://unleashedbbs.com/hardware#esp32-cam) or an [ESP32-S3 camera
   board](https://unleashedbbs.com/hardware#esp32-s3-camera-board). The camera is on the board, so
   there is nothing to wire. They are side by side in [choosing a camera
-  board](https://unleashedbbs.com/hardware#choosing-a-camera-board).
+  board](https://unleashedbbs.com/hardware#choosing-a-camera-board), and two
+  ESP32-S3 boards in preview, the Waveshare 2 inch and the ETH, carry an
+  OV5640 camera too.
 - **Whichever camera your Freenove came with.** Its sensor varies between
   batches: Freenove's documents name an OV2640, and Rob's kit came
   with a GalaxyCore GC0308, which takes 640x480 pictures at most and has no
@@ -182,9 +184,9 @@ growing. They go into **Timelapse**, file area 13, with their own keep rules,
 so a fast timelapse never pushes out the pictures callers took. The shortest
 interval is 10 seconds, because the camera has to start up for each picture.
 
-Later, a motion sensor on a spare pin will be able to take a picture the
-moment something moves, for the visitor at the feeder nobody was watching
-for. That arrives with the sensors, and [the roadmap](https://unleashedbbs.com/roadmap) has it.
+From firmware 1.2.0, a [camera sat](https://unleashedbbs.com/satellites), a
+camera for any board with an SD card, can take one the moment a motion sensor
+sees something, for the visitor at the feeder nobody was watching for.
 
 ## What goes wrong
 

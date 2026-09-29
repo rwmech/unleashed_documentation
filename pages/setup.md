@@ -56,7 +56,8 @@ shot-newsysop-1
 ::: from 1.1.0
 Until you open it, the board is closed to everybody else: other callers get
 the busy message. When you have finished setting it up, open it on the board
-page of `CONFIG` by turning **Temporarily stop taking calls** off.
+page of `CONFIG` by turning **Stop taking calls** (**Closed** at 40 columns)
+off.
 :::
 
 After that, on any call, you become the sysop by typing `BYE` and your password
@@ -94,7 +95,9 @@ shot-config-board
 
 These screens were captured from the board's own software, version 0.23.0,
 running on a test machine: the setup at 80 columns and the CONFIG pages at 48.
-On a wider terminal the lists are wider; the forms are the same.
+On a wider terminal the lists are wider, and since firmware 1.1.0 a terminal
+of 80 columns or more gets longer form labels, such as **Onboard LED GPIO**
+where 40 columns say **Board LED**.
 
 ## board
 
@@ -249,12 +252,23 @@ it, and so does `CONFIG wifi`, its name before firmware 1.1.0.
   If callers reach the board from the internet, the forward on your router has
   to point at the new number too. When you would change it is under [one
   board per port](/docs/forward#one-board-per-port).
+- **CGNAT/Tailscale LAN** (`cgnat_local`), **CGNAT** at 40 columns: Whether
+  addresses in 100.64.0.0/10, the carrier-grade NAT range Tailscale also
+  uses, count as the board's own network. From firmware 1.1.1. It trusts
+  everybody behind the same carrier NAT, not only your own devices, which is
+  why it is off as shipped.
+- **SSH port (SyncTERM)** (`ssh_port`), **SSH port** at 40 columns, ESP32-S3
+  boards only, from firmware 1.1.2: SSH's own port, where the board speaks
+  first, for SyncTERM 1.9 and older. Used from the next restart. `0` turns it
+  off, and SSH still works on **Port**. As shipped, `6422`. The rest is under
+  [connect with SSH](/docs/terminals#connect-with-ssh).
 :::
 
 A change here is used from the **next restart**, never straight away, because
 changing the network under your own call would drop you, and a typo would leave
-nobody on the board to put it right. If the board cannot reach its network, the
-fix is the cable: [the install page](https://unleashedbbs.com/install) changes the Wi-Fi from your
+nobody on the board to put it right. A network the board cannot join within a
+minute of the restart is given up for the last one that worked. If the board
+still cannot reach its network, the fix is the cable: [the install page](https://unleashedbbs.com/install) changes the Wi-Fi from your
 browser.
 
 ## The plugin pages
@@ -450,11 +464,13 @@ start and then costs nothing.
   400 to 40000; as shipped, `20000`.
 - **Screens**: Whether screens on the card replace the board's own, file by
   file. Takes yes or no; as shipped, `yes`.
+- **Nightly**: From firmware 1.1.0, a full backup onto the card at 03:00,
+  keeping the last seven. Takes yes or no; as shipped, `no`.
 
 The card holds file areas, the forums and your own screens. The accounts, the
 settings and the caller log stay on the board, so a card that fails loses none
 of them. On the ESP32 dev board the wiring is on [the SD card
-page](/docs/sdcard); the Waveshare S3 has a slot. What happens to your own screens
+page](/docs/sdcard); the other boards have a slot of their own. What happens to your own screens
 when the card is out is under [screens of your own](/docs/sdcard#screens-of-your-own).
 
 <!-- Only a pointer until the 1.1.0 setup copy is written (review item F7, held): the lights plugin ships in firmware 1.1.0. -->

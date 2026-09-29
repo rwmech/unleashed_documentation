@@ -97,7 +97,7 @@ What it shows:
 - `manual`: each pixel its own effect and colour.
 - `off`.
 
-Coming soon, a board with a display can draw both lights on its screen, over a
+From firmware 1.2.0, a board with a screen can draw both lights on it, over a
 picture of a machine of your choosing: see [skins](/docs/skins).
 
 ## Telling the board about it
@@ -133,6 +133,7 @@ the separate supply is for.
 | The SD card or the blue LED stops working | A lights pin took one of theirs. Keep clear of 2 (the activity LED), 0 (the BOOT button) and the card's 5, 18, 19 and 23 |
 
 The board refuses a pin the flash uses (6 to 11) and one the chip does not
-have (20, 24 and 28 to 31), and the two outputs cannot share a pin. Nothing
-yet stops a pin taking one the board already uses, which is what the last row
-is about.
+have (20, 24 and 28 to 31), and the two outputs cannot share a pin. Since
+firmware 1.1.0 it also refuses a pin something else on the board already
+holds, such as the card's or the BOOT button's; the last row is for a board
+set up before that.

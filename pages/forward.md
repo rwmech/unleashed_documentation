@@ -99,12 +99,8 @@ second. One board per port.
 ::: from 1.1.0
 The way that works on every router is to give each board its own port to
 listen on, so every forward is the same number outside and in. From firmware
-1.1.0 that is a setting, on the network page of `CONFIG`:
-
-- **Port** (`port`): The port callers dial. Used from the next restart. It
-  cannot be the backup window's port. Takes 1 to 65535; as shipped, `6400`.
-  If callers reach the board from the internet, the forward on your router has
-  to point at the new number too.
+1.1.0 that is **Port** on [the network page of `CONFIG`](/docs/setup#network),
+used from the next restart.
 
 So set the second board's **Port** to 6401, restart it, and forward 6401 to
 6401 at that board's address. Callers on your own network dial it on 6401 as
@@ -113,12 +109,8 @@ well.
 A router that can send one outside number to a different number inside gives
 you the other way: leave both boards on 6400 and forward 6401 outside to 6400
 on the second board. Then the second board has to tell the directory which
-number callers dial, which is the **Outside** setting on the announce page of
-`CONFIG`:
-
-- **Outside**: The port callers dial from the internet, when your router
-  forwards a different number to the board. Leave it empty if the router
-  forwards the same number as **Port**, and the board sends that.
+number callers dial, which is **Outside** on [the announce page of
+`CONFIG`](/docs/setup#announce): the port callers dial from the internet.
 :::
 
 ::: until 1.1.0

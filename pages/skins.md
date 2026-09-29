@@ -16,8 +16,9 @@ and the board's name, address and callers appear on the picture's own screen.
 You draw the machine. The board makes it glow.
 
 > [!NOTE]
-> **Skins are coming soon for display-enabled boards: the firmware with skins
-> is in testing.** The first board for them is the [Makerfabs ESP32-S3
+> **Skins are coming for ESP32-S3 boards with a screen: [the
+> roadmap](https://unleashedbbs.com/roadmap) says when.** The first board for
+> them is the [Makerfabs ESP32-S3
 > Parallel TFT 3.5"](https://unleashedbbs.com/hardware#makerfabs-esp32-s3-parallel-tft-3-5-v1-0),
 > with a 480 by 320 screen. This page describes skins as they have been
 > built, and the stock skins are here to download, so you can start drawing
@@ -64,8 +65,8 @@ skin-atari.png | `atari`: a cream computer with its drive, and a wood-grain tele
 skin-imsai.png | `imsai`: a front panel with paddle switches. Its 16 address lamps are the strip
 :::
 
-**Coming soon for display-enabled boards: the firmware with skins is in
-testing.** The skins are ready now, in two zips holding the same five:
+**Skins are coming, on [the roadmap](https://unleashedbbs.com/roadmap).** The
+stock ones are ready now, in two zips holding the same five:
 
 - [Download the stock skins for the card](/skins/skins.zip): `skins.zip`,
   about 100 KB, laid out the way the card wants them. Unzip it at the top of
@@ -350,7 +351,7 @@ top to bottom:
 | `name` | The board's name | The Rusty Antenna |
 | `address` | The address and port callers dial | 192.168.0.40:6400 |
 | `uptime` | How long since the board started | up 3d 4h |
-| `callers` | Callers on, out of the lines there are | Callers 2/11 |
+| `callers` | Callers on, out of the lines there are | Callers 2/10 |
 | `today` | Calls since midnight | 14 calls today |
 | `heap` | Free memory | 84K free |
 | `card` | Free space on the SD card | card 29 GB free |

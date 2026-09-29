@@ -126,7 +126,7 @@ This is the route that works, and it ends with an ordinary terminal.
 2. Next to **Linux development environment**, select **Set up**, and answer the few questions it asks. Google says setup takes ten minutes or more, and that is about right.
 3. A **Terminal** window opens when it finishes. What you are looking at is Debian.
 4. Install a telnet client: `sudo apt -y install inetutils-telnet`
-5. Join a board: `telnet 192.168.1.50 6400`, with the address and port from the listing.
+5. Join a board: `telnet 192.168.1.50 6400`, with the address and port from the listing. On an ESP32-S3 board you can [call over SSH](#connect-with-ssh) instead, which is encrypted: `ssh -p 6400 yourhandle@192.168.1.50`.
 
 Use the numeric address rather than a `.local` name. The Linux side looks
 names up for itself and does not always see what ChromeOS can see, so a name
@@ -155,8 +155,8 @@ if you ask for the setting by name instead of asking for Linux.
 - **A Chrome extension cannot do this**, and that is worth knowing before you spend an afternoon looking for one. Google's own Secure Shell is an SSH client and does not speak telnet. Nothing else can either: opening a plain connection was a Chrome Apps ability, not an extension one, and ChromeOS 138, in July 2025, was the last release to support Chrome Apps a user installed themselves. Google's newer route for web apps that need a raw connection, Isolated Web Apps, installs only through an administrator's policy, so it is the administrator's decision like everything else here.
 - **A terminal that runs in a web page needs a helper in the middle.** A page cannot open a telnet connection, so clients like [fTelnet](https://www.ftelnet.ca/) connect over WebSocket to a proxy and the proxy makes the telnet connection for them. It works. It also means that proxy reads everything in both directions, which on a telnet board is everything, your password included. Running the proxy yourself on your own network is a fair trade. Using somebody else's is a public conversation with one more listener in it.
 
-If none of those is available to you, a Chromebook cannot join a board, and
-there is no trick that gets round it. The machine is doing exactly what it was
+If none of those is available to you, a Chromebook cannot join a board over
+telnet, and there is no trick that gets round it. The machine is doing exactly what it was
 set up to do. Borrow a Windows, Mac or Linux computer for the evening, or ask
 for the Linux setting, which is the smallest of the three requests.
 
@@ -253,9 +253,9 @@ sits between the two: it takes the serial line on one side and speaks telnet on
 the other, so the old machine thinks it is talking to a modem.
 
 Hardware ones for Commodore and Atari are listed above. On anything with a
-serial port, a Raspberry Pi running `tcpser`, or an ESP32 running
-[Zimodem](https://github.com/bozimmerman/Zimodem), does the same job for a few
-dollars. A real modem and a real phone line also still work, if you have both.
+serial port, an ESP32 running [Zimodem](https://github.com/bozimmerman/Zimodem)
+does the same job for a few dollars, and so does `tcpser` on a computer you
+already have. A real modem and a real phone line also still work, if you have both.
 
 ## What the board does with all this
 
