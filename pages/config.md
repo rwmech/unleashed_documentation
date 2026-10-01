@@ -7,6 +7,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <!-- Moved whole from setup.md (guides, 2026-09-29, tty-ux's sysop guide spec): How CONFIG works, board, limits, accounts, staff, wifi and network, the plugin pages, serial and example. Anchors kept. The backup page's settings moved to /docs/backups, the SSH port row to /docs/ssh, and each plugin's settings to its own guide. -->
 # Every setting: CONFIG
 
+::: applies
+Firmware 1.2.0
+:::
+
 Every setting on a µnleashed board can be changed from the board itself, while
 you are logged in as the [[sysop]], the host, with one command: `CONFIG`. Nothing needs a
 laptop, a text editor or a reflash.

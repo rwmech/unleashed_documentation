@@ -7,6 +7,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <!-- Site 1.3.0 (Rob, marketing round 3): "Apps for joining" in the menu and the title, with the hobby's words, telnet client and terminal, explained where they first appear. The phone apps were checked on their stores on 2026-09-25: TERMinator (Phil Whittemore) on the App Store, free, iPhone and iPad; the Play Store listing could not be fetched from here, and the firmware's README and CLIENTS.md already name it for Android. MuffinTerm (Molly Black), free on the App Store for iPhone, iPad and Mac. Site 1.3.1 (Rob: "I love Terminus on Android personally", meaning Termius), checked 2026-09-25: termius.com/pricing lists Telnet in every plan including the free Starter; its App Store listing says the free plan connects "with SSH, Mosh, Telnet, Port Forwarding, and SFTP"; termius.com/download offers Android, iPhone, iPad, Windows, macOS and Linux. It is a general SSH and telnet app, not one made for BBSes. -->
 # Apps for joining
 
+::: applies
+Firmware 1.2.0
+:::
+
 What you join a board with: a [[telnet client]], the free app that connects
 to a board's address and shows its screens. BBS people also call it a
 [[terminal]]. Any one works, but some are built for this and look a great

@@ -7,6 +7,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <!-- The camera page (site 1.2.4, Rob), in the shape of /sdcard and /lights. Every fact is from the firmware repository's internal/PLAN-freenove-cam.md as of 2026-09-24, and only from the sections Rob decided: "Snapshot command, self-timer and timelapse", "Limits, notices and naming" and "Retention", plus the privacy points in the brief. Since site 1.2.7 the sensor and the resolution are stated, from the firmware's FNCAM 1.0.2 (CHANGELOG, COMMANDS.md and src/board.h, 2026-09-25): the Freenove's sensor varies between batches, Freenove document an OV2640 and Rob's kit carries a GalaxyCore GC0308 (640x480 at most, no JPEG encoder, the board encodes: 3.6 to 3.9 s from SNAPSHOT to saved); both drivers are built, and CONFIG offers qvga or vga on either, vga as shipped (off until switched on, staff told of every snap, a lens cap the only real guarantee). Deliberately not stated, because the plan leaves them open: the quality default, the brightness default, the default count limits, the shortest timelapse interval (to be measured), exact wording of the board's messages other than "Download it now? (y/N)", which is Rob's, and the text-art preview (a stretch without a go). The Photos area is readable by everyone as shipped (Rob, in the 1.2.4 brief; the plan's proposal was users). The "until 1.1.0" note follows /lights; if the camera slips past 1.1.0, move the gate to the release that carries it. Since site 1.2.9 the settings, the download question, the flash and the timelapse are the firmware's as built, from COMMANDS.md "camera" and src/plugins/camera.cpp at 1.1.0-dev.15 (FNCAM 1.0.2): off until enabled (no PF_ON), staff told "Node n took a photo.", "Download it now?  [Y]es  [X]modem  [N]o", quality 12 on 4 to 40, 200 kept of each kind, flash off as shipped (the Freenove has no pixel), timelapse every 10 s at the least into area 13. The "from 1.1.0" note says which camera board the installer carries. Since site 1.3.4 (Rob) the ESP32-CAM is a third camera board and "What size photos can I take?" gives each board's largest photo, the same figures as /hardware's "Choosing a camera board": the ESP32-CAM's 1600x1200 from Rob's bench (a genuine OV2640, UXGA) and its board profile being finished (BBS_CAM_SIZES qvga to uxga), the Freenove's 320x240 or 640x480 from its build on either sensor, the S3 camera board's 2048x1536 from the OV3660's datasheet, expected until tested. Since site 1.3.7 (Rob, 2026-09-25) the Freenove's sizes follow the camera fitted from firmware 1.1.1 (FNCAM 1.0.4, the firmware's pic-1.1.1 lane, aa9f2d0: up to VGA on a GC0308, UXGA on an OV2640, vga still the size as shipped), behind "::: from esp32-fncam 1.1.1", which opens once the installer offers the Freenove 1.1.1, its preview included; the Resolution row points at that section rather than carrying a second copy. The GC0308's "about 4 seconds" went: 1.1.1 waits for the exposure to settle, and snap times are still being measured. -->
 # Camera
 
+::: applies
+Firmware 1.2.0
+:::
+
 A camera on the board, and anyone you allow can take a picture with it.
 Point the board at a bird feeder, a garden or a workbench, and a visitor on a
 laptop, or on an Atari 800 from 1979, types `SNAPSHOT` and has the photo a
@@ -28,11 +32,22 @@ few seconds later.
 :::
 
 ::: from esp32-cam
+::: until 1.2.0
 > [!NOTE]
 > **The Freenove camera board and the ESP32-CAM are on [the
 > installer](https://unleashedbbs.com/install)**, the Freenove from firmware 1.1.0 and the ESP32-CAM
 > as a preview, an early build out for testing. The ESP32-S3 camera board
 > goes on once it has been tested.
+:::
+::: from 1.2.0
+> [!NOTE]
+> **Four camera boards are on [the
+> installer](https://unleashedbbs.com/install)** in firmware 1.2.0: the
+> Freenove, the ESP32-CAM, and the Waveshare 2 inch and ETH boards, both
+> ESP32-S3 boards with an OV5640. The ESP32-S3 camera board goes on once it
+> has been tested. And any board with an SD card can have a [camera
+> sat](https://unleashedbbs.com/satellites).
+:::
 :::
 :::
 
@@ -48,8 +63,8 @@ camera-snap
   board](https://unleashedbbs.com/hardware#esp32-s3-camera-board). The camera is on the board, so
   there is nothing to wire. They are side by side in [choosing a camera
   board](https://unleashedbbs.com/hardware#choosing-a-camera-board), and two
-  ESP32-S3 boards in preview, the Waveshare 2 inch and the ETH, carry an
-  OV5640 camera too.
+  ESP32-S3 boards, the Waveshare 2 inch and the ETH, carry an OV5640 camera
+  too.
 - **Whichever camera your Freenove came with.** Its sensor varies between
   batches: Freenove's documents name an OV2640, and Rob's kit came
   with a GalaxyCore GC0308, which takes 640x480 pictures at most and has no
@@ -121,8 +136,10 @@ caller, so you can find your own pictures.
 
 ## Limits
 
-- **10 pictures an hour and 20 a day for each caller.** Every snap says where
-  you stand, and at the limit the board says when the next one is allowed.
+- **10 pictures an hour and 20 a day for each caller**, as shipped, one
+  count across every camera on the board. The sysop sets both, up to 20, in
+  `CONFIG photos`. Every snap says where you stand, and at the limit the
+  board says when the next one is allowed.
 - **A guest is counted by address as well as by handle**, so hanging up and
   calling back under another name does not start the count again.
 - **The sysop is not counted.**
@@ -153,8 +170,10 @@ Low risk is not no risk, and the difference is what is in frame.
 
 ## Settings
 
-`CONFIG camera`, the sysop's alone. The flash, the timelapse and the
-picture adjustments are pages of their own inside it.
+`CONFIG camera`, the sysop's alone, is the built-in camera's own settings.
+The flash, the timelapse and the picture adjustments are pages of their own
+inside it. What the photos are kept for, and how many, is `CONFIG photos`,
+below: since firmware 1.2.0 it covers every camera, a camera sat's too.
 
 | Setting | What it does | As shipped |
 |---|---|---|
@@ -165,16 +184,25 @@ picture adjustments are pages of their own inside it.
 | Quality | How sharp the JPEG is, 4 to 40, where lower is sharper. | 12 |
 | Watermark | The board's name, the date and who took it, in a corner. | On |
 | Name snaps | By date, by date and handle, or a folder for each handle. | By date |
-| Keep caller snaps for | Days before a caller's photo is removed. 0 keeps them however old. | 30 days |
-| Max caller snaps | How many callers' photos are kept. 0 is no limit. | 200 |
-| Card space floor | Free space the camera always leaves on the card for the file areas, the forums and the backups. | 10% of the card or 512 MB, whichever is smaller |
 | Flash | Off, a pixel lit white, or a pin driven high for an LED, a relay or a flash unit, while a picture is taken. | Off |
 | Timelapse every | Minutes and seconds between the board's own pictures, up to a day. 0 is off, and anything under 10 seconds is 10. | Off |
-| Keep timelapse for, max timelapse shots | The same two rules for the timelapse's pictures. | 7 days, 200 |
 | Flip, mirror, brightness, contrast, colour, exposure, white balance, effect | For a camera mounted upside down, looking through a mirror, or in a dim room. | Off, or the sensor's own |
 
+`CONFIG photos`, the sysop's alone, for every camera on the board:
+
+| Setting | What it does | As shipped |
+|---|---|---|
+| Default camera | The camera a bare `SNAPSHOT` uses, by the name `CAMERA` shows. Empty is the built-in camera, else the first that is up. | Empty |
+| Snaps an hour, Snaps a day | Each caller's limit, one count across every camera, 1 to 20. The sysop has none. | 10, 20 |
+| Keep photos, days | Days before a caller's photo is removed. 0 keeps them however old. | 30 |
+| Keep at most | How many callers' photos are kept. 0 is no limit. | 200 |
+| Card kept free, MB | Free space always left on the card for the file areas, the forums and the backups. | A tenth of the card, 512 MB at most |
+| Keep timelapse, days; Timelapse at most | The same two rules for the timelapse's pictures. | 7, 200 |
+
 The oldest photos go first when any of the last four rules bites, and the
-timelapse's go before callers' pictures when the card is short of room.
+timelapse's go before callers' pictures when the card is short of room. A
+board set up before 1.2.0 keeps its old values: `CONFIG photos` shows them
+and moves them across the first time it is saved.
 
 ## Timelapse
 

@@ -6,6 +6,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 # Making the dial links work
 
+::: applies
+Firmware 1.2.0
+:::
+
 Every board on the list shows its address as a `telnet://` link. Whether
 clicking it does anything depends on what your computer has registered for
 that scheme, and on a normal Windows machine the answer is usually nothing.

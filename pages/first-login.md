@@ -7,6 +7,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <!-- Moved whole from setup.md's "First, become the sysop" (guides, 2026-09-29, tty-ux's sysop guide spec), anchor kept. The captures are from firmware 0.23.0: shot-setup-screen still tells the sysop to backspace over the stars, which firmware 1.0.0 made unnecessary (it still works). Recapture it, with the others, at 1.2.0; do not edit a capture by hand. -->
 # First login: become the sysop
 
+::: applies
+Firmware 1.2.0
+:::
+
 ## First, become the sysop
 
 A new board has one password, the sysop's, and it is `unleashed`. It only works

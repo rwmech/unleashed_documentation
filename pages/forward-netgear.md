@@ -6,6 +6,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 # Port forwarding on a NETGEAR router
 
+::: applies
+Firmware 1.2.0
+:::
+
 Nighthawk and R-series, through the web interface at routerlogin.net.
 
 > This opens a door into your own network and you are responsible for what

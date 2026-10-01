@@ -7,6 +7,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <!-- Moved whole from setup.md's "info" (guides, 2026-09-29, tty-ux's sysop guide spec). -->
 # Information pages
 
+::: applies
+Firmware 1.2.0
+:::
+
 The ten information pages, which callers read with `INFO` and from the chat room
 with `/i`. On as shipped: anybody may read them, and only the sysop may write.
 

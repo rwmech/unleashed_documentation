@@ -7,6 +7,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <!-- Moved whole from setup.md's "chat" (guides, 2026-09-29, tty-ux's sysop guide spec). -->
 # Chat and mail
 
+::: applies
+Firmware 1.2.0
+:::
+
 The chat room, and the messages callers leave each other. On as shipped, and
 anybody may talk, guests included.
 

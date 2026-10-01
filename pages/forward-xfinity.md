@@ -6,6 +6,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 # Port forwarding on an Xfinity gateway
 
+::: applies
+Firmware 1.2.0
+:::
+
 A rented Xfinity gateway, through the Xfinity app.
 
 > This opens a door into your own network and you are responsible for what
