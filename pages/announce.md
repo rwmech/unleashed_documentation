@@ -7,6 +7,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <!-- Moved whole from setup.md's "announce" (guides, 2026-09-29, tty-ux's sysop guide spec). The Outside field is also cited from forward.md's "A name that follows your address". -->
 # The directory listing
 
+::: applies
+Firmware 1.2.0
+:::
+
 ## announce
 
 The directory listing: a short message the board sends every few minutes so it

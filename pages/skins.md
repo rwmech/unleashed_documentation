@@ -5,7 +5,12 @@ License: Creative Commons Attribution-ShareAlike 4.0 International
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 <!-- Making display skins (site 1.3.14; rewritten in site 1.3.17 from the skins engineer's revised draft, internal/site-draft-make-a-skin-2026-09-26.md on the firmware's panel-skins branch, "revised the same day for the Skins file area", with the upload route first). Every fact is from that branch, checked there in the source rather than the prose: src/plugins/skin_manifest.h (the grammar and its limits), skin_jpeg.h (the decoder's rules, the fill bytes and empty segment refusals), skin.cpp (skinPath: a folder first, then the pair; scanSkins: what CONFIG lists; want() and skin::uploaded(): when a skin is tried again or reloaded; the not-found messages), files.cpp (kAreaSkins, skinFile, placeBackup: the Skins area, area 12 on the Makerfabs and 14 on a board that also has a camera, its levels, the refusal text, replace on resend, E), skin_draw.h and lights.cpp (the lamps, the drive light's colours, the strip past Strip len staying dark, the lights plugin needing to be on), panel.cpp (the CONFIG row, PANEL's lines), skin_seed.h (the stock set on the card, in a later release), tools/mkskin.py (check, preview, jpeg, leds -o, pair, pack), host/skins/cases.txt (the error messages). The board: the Makerfabs ESP32-S3 Parallel TFT with Touch 3.5" v1.0, 480x320, on /hardware since site 1.3.17. No firmware version is named: the firmware with skins is in testing (1.1.2-skins.1, S3 1.1.3, a pre-release on the panel-skins branch), and COMMANDS.md there says 1.1.2 while the firmware's CLAUDE.md puts skins in the 1.2.0 hardware release. Once a release carries skins, wrap the status note in "::: until X.Y.Z" and name the version. The stock set: pc, c64, apple2, atari, imsai, painted by tools/mkskins_stock.py with no maker's name or logo; the zips and the pictures in static/skins/ are the skins engineer's (release-prep/skins-site, 2026-09-26), the pictures rendered by the host build through the board's own drawing path, and checked here for logos: none, only lamp and switch labels. -->
+<!-- 2026-10-01: skins shipped in firmware 1.2.0 (its CHANGELOG, "Panel skins on the boards with a display"), so the two status notes are gated until/from 1.2.0, as the comment above asks, and the page names the version. -->
 # Skins
+
+::: applies
+Firmware 1.2.0
+:::
 
 A board with a screen can dress up as a machine from another decade. A skin is
 a picture of a computer, a terminal or a front panel, and the board lights its
@@ -15,6 +20,7 @@ and the board's name, address and callers appear on the picture's own screen.
 
 You draw the machine. The board makes it glow.
 
+::: until 1.2.0
 > [!NOTE]
 > **Skins are coming for ESP32-S3 boards with a screen: [the
 > roadmap](https://unleashedbbs.com/roadmap) says when.** The first board for
@@ -23,6 +29,15 @@ You draw the machine. The board makes it glow.
 > with a 480 by 320 screen. This page describes skins as they have been
 > built, and the stock skins are here to download, so you can start drawing
 > now.
+:::
+
+::: from 1.2.0
+> [!NOTE]
+> **Skins arrived in firmware 1.2.0, on the boards with a screen.** The first
+> board for them was the [Makerfabs ESP32-S3
+> Parallel TFT 3.5"](https://unleashedbbs.com/hardware#makerfabs-esp32-s3-parallel-tft-3-5-v1-0),
+> with a 480 by 320 screen, and the stock skins are here to download.
+:::
 
 ::: art
 skin-parts
@@ -65,8 +80,11 @@ skin-atari.png | `atari`: a cream computer with its drive, and a wood-grain tele
 skin-imsai.png | `imsai`: a front panel with paddle switches. Its 16 address lamps are the strip
 :::
 
-**Skins are coming, on [the roadmap](https://unleashedbbs.com/roadmap).** The
-stock ones are ready now, in two zips holding the same five:
+::: until 1.2.0
+**Skins are coming, on [the roadmap](https://unleashedbbs.com/roadmap).**
+:::
+
+The stock skins come in two zips holding the same five:
 
 - [Download the stock skins for the card](/skins/skins.zip): `skins.zip`,
   about 100 KB, laid out the way the card wants them. Unzip it at the top of

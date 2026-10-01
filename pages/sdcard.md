@@ -6,6 +6,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 # Adding an SD card
 
+::: applies
+Firmware 1.2.0
+:::
+
 > [!NOTE]
 > **The Waveshare S3 needs none of this.** Its card slot is on the board:
 > [the S3](https://unleashedbbs.com/hardware#waveshare-esp32-s3-lcd-1-47). So

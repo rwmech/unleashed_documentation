@@ -7,6 +7,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <!-- The setup hub (guides, 2026-09-29, tty-ux's sysop guide spec, internal/tty-ux-sysop-guide-2026-09-29.md in the site's working tree). Five steps in /install's numbered style, then a card for each part of the board, then Going public. Everything that was on this page moved whole to a page of its own: first-login, config, backups, chat, forums, info, announce, ssh, and the files and sd settings to sdcard. Every old anchor still lands here: #first-become-the-sysop on step 3, the plugins' on their cards, and the CONFIG pages' on the "Every setting" list, each a link to the same id on /docs/config. -->
 # Set up your BBS
 
+::: applies
+Firmware 1.2.0
+:::
+
 From a board in a box to callers on it, in five steps.
 
 ::: guidetop

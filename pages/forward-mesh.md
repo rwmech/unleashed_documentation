@@ -6,6 +6,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 # Port forwarding on eero and Google Nest Wifi
 
+::: applies
+Firmware 1.2.0
+:::
+
 The two popular app-only mesh systems. Both can do it; neither has a web page
 to do it from.
 

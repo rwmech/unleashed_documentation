@@ -6,6 +6,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 # Port forwarding on an ASUS router
 
+::: applies
+Firmware 1.2.0
+:::
+
 RT-AX and RT-AC models on ASUSWRT, firmware 3.0.0.4.384.40000 or later.
 
 > This opens a door into your own network and you are responsible for what

@@ -7,6 +7,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <!-- The lights build page (site 1.2.1, Rob: "one for the LED installs for a 10p and 1p LEDs the exact same way" as /sdcard). Every fact is the firmware's, at 1.1.0-dev.9: src/plugins/lights.h and lights.cpp (the word lists, the pins -1 to 33, 16 pixels at most, 10 as shipped, brightness 10), COMMANDS.md "lights" (the effects, the colours, Power, the refused pins, GPIO13, the example strip pin 14), CHANGELOG 1.1.0-dev.4 and dev.8. The electrical advice is Rob's, settled in the firmware's CLAUDE.md: 5 V pixels on a 3.3 V data pin with no level shifter, a 330 to 470 ohm resistor at the pixel, 100 nF across its supply, and a strip of ten on a supply of its own. Not stated here on purpose: what CONFIG does with a brightness over 30. COMMANDS.md says it asks first, and at dev.9 the CONFIG rows still stop at 30; say it once 1.1.0 is released and the two agree. -->
 # Lights
 
+::: applies
+Firmware 1.2.0
+:::
+
 > [!NOTE]
 > **The Waveshare S3 needs none of this.** Its drive light is the LED on the
 > board, and its screen draws the strip: [the S3](https://unleashedbbs.com/hardware#waveshare-esp32-s3-lcd-1-47).
