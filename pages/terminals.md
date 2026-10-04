@@ -10,7 +10,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 What you join a board with: a [[telnet client]], the free app that connects
 to a board's address and shows its screens. BBS people also call it a
 [[terminal]]. Any one works, but some are built for this and look a great
-deal better doing it.
+deal better doing it. One exception, worth knowing before you install
+anything: a board that takes [[SSH]] can be called with the `ssh` command your
+computer most likely already has, and [connect with SSH](#connect-with-ssh)
+is the whole of it.
 
 ::: art
 term-modern
@@ -81,6 +84,35 @@ take telnet only.
 ssh -p 6422 yourhandle@board.example.com
 ```
 
+<!-- Docs, 2026-10-04 (Rob: SSH means connecting "regardless of a terminal
+program"). Checked rather than recalled: Microsoft's Windows Terminal SSH
+tutorial says "Windows has a built-in SSH client and SSH server that you can use
+in Windows Terminal", the latest builds of Windows 10 and Windows 11, in
+C:\Windows\System32\OpenSSH
+(learn.microsoft.com/windows/terminal/tutorials/ssh); Apple's Terminal User
+Guide, "Connect to servers in Terminal on Mac", has ssh among its protocols with
+"ssh username@hostname"
+(support.apple.com/guide/terminal/connect-to-servers-trml1018/mac). Microsoft's
+OpenSSH overview page is less definite, listing "Windows 10 build 1809 +" as
+"Not installed, install and enable using optional features", which is why this
+says most computers and says what to do when it is missing. The option goes
+BEFORE the destination: OpenSSH's synopsis is "ssh [options] destination
+[command [argument ...]]" and anything after the destination is run as a command
+on the far end (man.openbsd.org/ssh). -->
+- **You may already have everything you need.** The `ssh` command comes with
+  most computers, so an SSH board can be called with nothing installed at all:
+  it is in Terminal on a Mac and on Linux, and in Windows Terminal or
+  PowerShell on Windows 10 and 11. If Windows says `ssh` is not recognised,
+  it is one optional feature away: **Settings**, **System**, **Optional
+  features**, **View features**, then **OpenSSH Client**. Write the port
+  before the address, as above: anything after the address is taken as a
+  command to run rather than a setting.
+- **What a plain `ssh` does and does not give you.** It is a terminal, not an
+  app made for boards, so the screens, the chat, the forums and the mail are
+  all there and the board works out whether to draw its art in UTF-8 or
+  CP437. What it has no way to do is a file transfer: `DOWNLOAD` and `UPLOAD`
+  need an app that speaks XMODEM or YMODEM, so keep one of the apps above for
+  that.
 - **Port 6422 is SSH's own.** There the board speaks first, which SyncTERM
   1.9 and older need: use 6422 with SyncTERM, never 6400. The sysop can move
   it or turn it off (0) in `CONFIG network`, on the **SSH port** row.

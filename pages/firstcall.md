@@ -10,6 +10,17 @@ You have a free app for joining, a [[telnet client]], you have picked a board
 off the list, and it answered. On a [[BBS]] that is a first call, a name from
 the days when you phoned a board to reach it. Here is what happens next.
 
+<!-- Docs, 2026-10-04 (Rob: SSH means connecting "regardless of a terminal
+program"). The sources for the ssh command on each system are in the comment
+over the SSH bullets in terminals.md; the port and the handle as the user name
+are the firmware's COMMANDS.md and src/core/bbs_ssh.cpp. -->
+If you have not installed anything yet, you may not need to. A board that takes
+[[SSH]] answers the `ssh` command that most computers already have, in Terminal
+on a Mac and on Linux or in Windows Terminal on Windows: [connect with
+SSH](/docs/terminals#connect-with-ssh). The rest of this page is then the same,
+bar one thing, and it saves you a question: an SSH caller is never asked to
+press DEL or BACKSPACE, because an SSH line is an ANSI terminal either way.
+
 ::: art
 firstcall
 :::
