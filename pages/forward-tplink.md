@@ -6,6 +6,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 # Port forwarding on a TP-Link router
 
+::: applies
+Firmware 1.2.0
+:::
+
 Archer series through the web interface, and Deco mesh through its app.
 
 > This opens a door into your own network and you are responsible for what

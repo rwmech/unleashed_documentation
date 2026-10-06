@@ -6,6 +6,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 # Guides
 
+::: applies
+Firmware 1.2.0
+:::
+
 How to join a [[BBS]], how to set one up, and how to let people outside
 your home in. Every guide is free to share and adapt, under
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), and lives
@@ -42,6 +46,12 @@ in [its own repository](https://github.com/rwmech/unleashed_documentation).
   asks.
 - [Skins](/docs/skins): dressing a board with a screen up as another
   machine.
+
+## Bringing a new board
+
+- [Bring your board](https://unleashedbbs.com/bring-your-board): porting a
+  board that is not on the list yet, or building a sat of your own, and
+  sending it in.
 
 Putting the software on a board in the first place is on
 [the installer page](https://unleashedbbs.com/install).

@@ -7,6 +7,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <!-- Moved whole from setup.md's "forums" (guides, 2026-09-29, tty-ux's sysop guide spec). -->
 # Forums
 
+::: applies
+Firmware 1.2.0
+:::
+
 The message boards, in topic areas. They need a card, and they are **off** as
 shipped, so the topics can be set up first. The card is on [adding an SD
 card](/docs/sdcard).

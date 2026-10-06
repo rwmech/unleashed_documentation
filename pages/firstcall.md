@@ -6,6 +6,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 # Your first call
 
+::: applies
+Firmware 1.2.0
+:::
+
 You have a free app for joining, a [[telnet client]], you have picked a board
 off the list, and it answered. On a [[BBS]] that is a first call, a name from
 the days when you phoned a board to reach it. Here is what happens next.

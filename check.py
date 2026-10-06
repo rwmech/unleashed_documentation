@@ -46,7 +46,9 @@ passed = failed = 0
 BLOCKS = ("art", "cta", "next", "cards", "hero", "skins",
           # The setup hub's (sitekit 1.3.0): the numbered steps, the wrap
           # that puts them beside the drawing, and the Going public banner.
-          "guide", "guidetop", "gopublic")
+          "guide", "guidetop", "gopublic",
+          # "Applies to versions" (sitekit 1.4.0), under every guide's title.
+          "applies")
 GATE = re.compile(r"^::: (from|until) \S+( \d+\.\d+\.\d+)?\s*$")
 # The drawings the directory registers for the guides (server.py, ART).
 ART = ("firstcall", "setup-steps", "term-modern", "term-chromebook", "term-commodore",
@@ -57,7 +59,8 @@ DIRECTORY = ("/", "/directory", "/badges", "/how", "/rules", "/data", "/feed.xml
              "/api/boards.json", "/docs")
 # Pages of the project's site, which a guide links absolutely.
 SITE = ("", "install", "hardware", "build", "different", "whofor", "kids", "teachers",
-        "roadmap", "donate", "upgrade", "connected", "satellites", "directory")
+        "roadmap", "donate", "upgrade", "connected", "satellites", "directory",
+        "bring-your-board")
 
 
 def check(label, ok):
@@ -94,6 +97,14 @@ def main():
     check("every page opens with its licence line" + (f"  <- {bad}" if bad else ""), not bad)
     bad = [n for n, t in texts.items() if len(re.findall(r"^# \S", prose(t), re.M)) != 1]
     check("every page has exactly one title" + (f"  <- {bad}" if bad else ""), not bad)
+    # Rob, 2026-10-01: every guide says which versions it is true for,
+    # straight under its title, and the line moves in the same change that
+    # makes the guide right for a new release. Only released versions.
+    bad = [n for n, t in texts.items()
+           if not re.search(r"^# .+\n\n::: applies\n(?=[^\n]*\d+\.\d+\.\d+)[^\n]+\n:::\n",
+                            t, re.M)]
+    check("every page opens with its Applies to versions line, a version in it"
+          + (f"  <- {bad}" if bad else ""), not bad)
 
     print("Comments and blocks open and close")
     bad = []

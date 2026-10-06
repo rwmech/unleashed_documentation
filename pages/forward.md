@@ -7,6 +7,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <!-- Site 1.3.0 (Rob, marketing round 3): "Go public" became "Let others in" in the menu, and this title says what the reader gets. The warning stays first, before any instructions, and the router instructions below keep their technical words, each explained where it first appears. -->
 # Let people outside your home join
 
+::: applies
+Firmware 1.2.0
+:::
+
 [[Port forwarding]] is the step that turns a board on your desk into a board
 anyone can join from anywhere, where the BBS world says "call". It is one
 setting on your router, and it is the setting with the most consequences, so

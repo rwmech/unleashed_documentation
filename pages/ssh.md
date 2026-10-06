@@ -7,6 +7,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <!-- The sysop's half of SSH (guides, 2026-09-29, tty-ux's sysop guide spec). Facts from the firmware's CLAUDE.md, 1.1.2 part 3: SSH on every ESP32-S3 profile, on the callers' port for clients that speak first and on ssh_port (6422, 0 off) where the board speaks first; host keys made at first start, their fingerprints OpenSSH-style in SYS and HARDWARE for staff. The ssh_port row is moved whole from setup.md's network page. The caller's half is terminals.md's "Connect with SSH". -->
 # SSH on your board
 
+::: applies
+Firmware 1.2.0
+:::
+
 Every ESP32-S3 board takes [[SSH]] beside telnet, from firmware 1.1.2: callers
 whose app can encrypt get an encrypted call, and telnet stays open for the
 machines that cannot. There is nothing to switch on. How a caller connects is

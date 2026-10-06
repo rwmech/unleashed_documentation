@@ -7,6 +7,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 <!-- Moved whole from setup.md's "backup" (guides, 2026-09-29, tty-ux's sysop guide spec), anchor kept; the pointer to the card's nightly backups is new. -->
 # Backups
 
+::: applies
+Firmware 1.2.0
+:::
+
 ## backup
 
 The backup window: a way to copy the board's settings, accounts and screens off

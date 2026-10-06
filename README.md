@@ -62,6 +62,24 @@ and the name is µnleashed, with its micro sign, outside code.
 Every guide opens with a comment carrying its licence line, the same five
 lines as `pages/index.md`.
 
+## Keeping guides current
+
+A guide is kept current in the same change that makes it wrong: a firmware,
+camsat or site change that alters what a guide says updates the guide in
+that change, not later. Every guide opens, straight under its title, with
+its **Applies to versions** line:
+
+```
+::: applies
+Firmware 1.2.0
+:::
+```
+
+It names the released versions the guide is true for (firmware, and camsat
+or site where they matter), never one that is not out yet, and it moves
+with the guide. At each release, every guide's line is checked. `check.py`
+fails a page without one.
+
 ## Testing
 
 ```sh

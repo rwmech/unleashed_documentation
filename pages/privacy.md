@@ -6,6 +6,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 # The real risks of open communications
 
+::: applies
+Firmware 1.2.0
+:::
+
 A [[BBS]] reached over [[telnet]] carries everything in the clear. This page says
 what that means, what it does not mean, and what to do about it, at length,
 because the short version leaves people to guess, and people guess badly in
