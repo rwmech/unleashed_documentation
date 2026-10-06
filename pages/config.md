@@ -169,11 +169,33 @@ it, and so does `CONFIG wifi`, its name before firmware 1.1.0.
   If callers reach the board from the internet, the forward on your router has
   to point at the new number too. When you would change it is under [one
   board per port](/docs/forward#one-board-per-port).
+<!-- Firmware 1.2.2: portmap::tick is given the ports the board is LISTENING on, not the configured ones (src/core/portmap.h), so the new number is asked for after the restart that moves it and never before. -->
+::: from 1.2.2
+  With [the board asking your router](/docs/forward#or-let-the-board-ask-your-router)
+  switched on, it asks for the new number by itself, after the restart that
+  moves it. It never asks for a port the board is not yet answering on.
+:::
 - **CGNAT/Tailscale LAN** (`cgnat_local`), **CGNAT** at 40 columns: Whether
   addresses in 100.64.0.0/10, the carrier-grade NAT range Tailscale also
   uses, count as the board's own network. From firmware 1.1.1. It trusts
   everybody behind the same carrier NAT, not only your own devices, which is
   why it is off as shipped.
+<!-- Firmware 1.2.2's port_map and its read-only row (the firmware repository, branch portmap-1.2.2: src/core/bbs_sysop.cpp kNetwork, COMMANDS.md, src/core/portmap.h). Both labels are the ones the form draws at each width. The whole of what it does, what it leaves behind and the security of it is on /docs/forward rather than repeated here, because this page is the reference and that one is where somebody deciding is reading. -->
+::: from 1.2.2
+- **Have router forward** (`port_map`), **Port map** at 40 columns: Whether
+  the board asks your router to forward its ports to it, so you never open a
+  router menu. From firmware 1.2.2, and `no` on a new board. It asks in three
+  protocols, PCP, NAT-PMP and then UPnP, which is the one most home routers
+  have. Where it works you get the same forward you would have made by hand.
+  Saving acts at once, and the board asks the router there and then. Read
+  [the whole of what it does, and what it can leave behind in your
+  router](/docs/forward#or-let-the-board-ask-your-router), before switching
+  it on.
+- **What the router did**, **Mapped** at 40 columns: Read only. The outside
+  address and port the router gave, how long the lease has left, and when it
+  answered, or the reason there is nothing. `PORTMAP` on the board says the
+  same thing at length and `PORTMAP NOW` asks the router again.
+:::
 - **SSH port (SyncTERM)** (`ssh_port`), ESP32-S3 boards only: on [the SSH
   page](/docs/ssh#the-ssh-port).
 :::

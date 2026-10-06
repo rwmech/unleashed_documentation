@@ -19,6 +19,14 @@ it would send.
 > itself while the default password is still set. And [forward the
 > port](/docs/forward) first, or callers will find a listing that does not answer.
 
+<!-- Rob, 2026-10-06: the sweep for anything that sends a sysop the long way round. The warning above stays as it is: forwarding still has to happen, and this says who can do it. Gated on firmware 1.2.2. -->
+::: from 1.2.2
+From firmware 1.2.2 the board can do the forwarding part itself, and
+`PORTMAP` tells you whether your router agreed, which is the thing to check
+before the listing goes on. [How that
+works](/docs/forward#or-let-the-board-ask-your-router).
+:::
+
 <!-- Site 1.3.10: from firmware 1.1.1 a closed board keeps announcing and sends "closed": true (PROTOCOL.md, Closed boards); 1.1.0 stops announcing while closed. -->
 ::: from 1.1.1
 While the board is closed to callers, it stays on the list, marked
@@ -63,6 +71,13 @@ pages](/docs/config#the-plugin-pages) explain. Then:
 - **Outside**: The port callers dial from the internet, when your router
   forwards a different number to the board. Leave it empty if the router
   forwards the same number as **Port**, and the board sends that.
+<!-- Firmware 1.2.2 (the firmware repository's ANNOUNCE.md on branch portmap-1.2.2, public_port): with port_map on and a mapping granted on a different outside port, an empty Outside publishes the granted port, because the listening port is then the one number that is certainly wrong. -->
+::: from 1.2.2
+  With [the board asking your router](/docs/forward#or-let-the-board-ask-your-router)
+  switched on, and the router having given it a different outside number than
+  it asked for, an empty **Outside** sends the number the router actually
+  gave. So the listing follows the router without your doing anything.
+:::
 - **Directory**: Where to send it. Comma separated, up to four, so a board can
   be in several directories.
 - **Every min**: Minutes between messages. Takes 1 to 1440; as shipped, `10`.
