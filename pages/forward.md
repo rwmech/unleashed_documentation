@@ -18,7 +18,7 @@ this page is blunt about what it does before it tells you how.
 > what a port is, stop and read until you do. If the network belongs to your
 > employer, your landlord, your university or your parents, ask them first.
 
-<!-- Rob, 2026-10-06: "make sure documentations says something like 'Check to see if this works before you bother reserachiing your router'". It sits under the warning and not over it: the page's rule is warning before instructions, and this is a pointer rather than a shortcut past them. Firmware 1.2.2's PORTMAP TEST and the CONFIG network button are specified and not built, so this says what the test tells you and never what it draws. The button is named at its 80 column label; /docs/config carries both widths. -->
+<!-- Rob, 2026-10-06: "make sure documentations says something like 'Check to see if this works before you bother reserachiing your router'". It sits under the warning and not over it: the page's rule is warning before instructions, and this is a pointer rather than a shortcut past them. Firmware 1.2.2's PORTMAP TEST and the CONFIG network button are specified and not built, so this says what the test tells you and never what it draws. The button is named at its 80 column label, "Run port map test", and only that one: no short form for a 40 column form exists in any repository yet, and /docs/config names the port_map setting at both widths but the button at neither. When the firmware settles the 40 column label, add it to /docs/config beside the setting's and then say so here. -->
 ::: from 1.2.2
 **Try this before you look anything up.** From firmware 1.2.2 the board can
 ask your router to set the forward up itself, and it can ask whether your
@@ -170,21 +170,43 @@ alternative is no forward at all. `PORTMAP` then shows **Lease: none**.
 A forward you made by hand has exactly the same property. This is not a new
 kind of risk; it is one you would not have thought to go looking for.
 
+<!-- The protections belong to the protocols that have them, and only two of the three do. Sources, checked 2026-10-06: RFC 6886 section 3.2.1 for the NAT-PMP quote, and RFC 6887 section 15.1 for PCP's equivalent ("MUST only accept normal ... PCP requests from a client on the same interface from which it would normally receive packets from that client, and it MUST silently ignore PCP requests arriving on any other interface"). UPnP IGD has no counterpart: the UPnP Device Architecture makes site-local scope a MAY, so whether an IGD answers on the WAN side is the manufacturer's choice. The two figures are Rapid7's "Security Flaws in Universal Plug and Play", January 2013 (hdm.io/writing/SecurityFlawsUPnP.pdf: 81 million addresses answered SSDP from the internet over the 2012 scan, about 17 million of those also exposed the SOAP service) and Akamai's UPnProxy, 2018 (about 65,000 routers carrying injected NAT entries). Do not write "the standards say so plainly" about all three again: that was the defect here, and on the page that calls UPnP "the one most home routers have" it told a reader a real risk did not exist. Transparency not fear mongering (Rob): the exposed case is a bad router rather than the normal one, and the page says which. -->
 ### What to know about the security of it
 
-UPnP has a reputation. The part of it that is earned is worth understanding
-properly, because it is not the part people usually repeat.
+UPnP has a reputation, and some of it is earned. Two different questions get
+run together when people repeat it, so they are worth taking apart.
 
-The risk is not that strangers on the internet can open ports in your router.
-A router set up correctly answers these requests only from the inside of your
-network, and the standards say so plainly. NAT-PMP's specification, RFC 6886,
-requires that a gateway "MUST NOT accept mapping requests destined to the NAT
-gateway's external IP address or received on its external network interface".
+**Can somebody on the internet open a port in your router this way?** For two
+of the three protocols, no, and their specifications say so in those terms.
+NAT-PMP's, RFC 6886, requires that a gateway "MUST NOT accept mapping
+requests destined to the NAT gateway's external IP address or received on its
+external network interface", and PCP's, RFC 6887, says a server "MUST
+silently ignore PCP requests arriving on any other interface" than the one it
+normally hears that client on.
 
-The risk is on your own side of it. There is no password and no prompt. Any
-device on your network can ask the router for a forward and get one, and the
-router does not tell you it happened. A laptop with something nasty on it, or
-a cheap gadget that has not been updated since it was made, can open a port
+**UPnP's specification carries no such requirement**, and UPnP is the one most
+home routers have. Nothing in it obliges a router to listen on the inside
+only, so whether yours does is its manufacturer's decision rather than the
+standard's, and some of them got it wrong. When Rapid7 asked every address on
+the internet in 2012, 81 million of them answered a UPnP question from
+outside, and about 17 million of those also offered the part that makes
+forwards. In 2018 Akamai found roughly 65,000 routers carrying forwards a
+stranger had put there from the internet and was pushing traffic through.
+
+That is a badly built or badly set up router rather than the usual one, and it
+is nothing to do with the board, which asks from inside your network the way
+every router expects. It is worth knowing because it is the one thing on this
+page you cannot check from the board and cannot fix with a setting on it: it
+is your router's firmware. Keep that up to date. If you want it shut for
+certain, switching UPnP off in the router closes the whole thing, for the
+board and for everything else on your network, and plenty of people run that
+way on purpose.
+
+**What you take on by switching this on** is on your own side of the router,
+and it is the part people repeat least. There is no password and no prompt.
+Any device on your network can ask the router for a forward and get one, and
+the router does not tell you it happened. A laptop with something nasty on it,
+or a cheap gadget that has not been updated since it was made, can open a port
 to itself by exactly the same route the board uses. That is the design and
 not a fault in any particular router: these protocols were written for a home
 network where everything on it was assumed to be trusted.
@@ -192,10 +214,6 @@ network where everything on it was assumed to be trusted.
 So the setting ships switched off, and leaving it off and forwarding the port
 by hand is a perfectly reasonable choice. Forwarding by hand costs you one
 more evening and it is an evening you are in charge of.
-
-Switching UPnP off in the router closes the whole thing, for the board and
-for everything else on your network, and plenty of people run that way on
-purpose.
 
 ### It will tell you when your ISP is in the way
 
@@ -240,12 +258,22 @@ failures, and the second one cannot be fixed by any setting at all.
   fibre plans. Your options are asking the ISP for a public address, IPv6, or
   an outbound tunnel.
 
+<!-- This used to say "switch on the setting above", which contradicted the section two above it and the aside at the top of the page, both of which say the test answers this without opening anything. The reader who lands here from that aside is most often behind a carrier NAT, and for them the test is the whole answer rather than a first step, so it must not ask them to open a port to find out they cannot. Switching the setting on belongs after the decision, not before it. -->
 ::: from 1.2.2
 Both of these are a question about one number, your router's own outside
-address, and finding it usually means logging into the router. The board can
-read it off the router for you instead: switch on [the setting
-above](/docs/forward#or-let-the-board-ask-your-router) and `PORTMAP` prints
-the address and says whether it is on the internet at all.
+address, and finding it usually means logging into the router. From firmware
+1.2.2 the board can read it off the router for you without opening anything:
+`PORTMAP TEST`, or the **Run port map test** button on `CONFIG network`, asks
+the router for its outside address and says whether it is on the internet at
+all. [The test makes no
+forward](/docs/forward#finding-out-without-switching-anything-on), so it is
+safe to run before you have decided anything.
+
+If it comes back **NOT on the internet**, you are behind one of the two above
+and that is your answer: there was never a router setting to find, and you
+have saved yourself the evening. Switching [the setting
+above](/docs/forward#or-let-the-board-ask-your-router) on is what you do once
+the test says your router will do it and you have decided to let it.
 :::
 
 Also worth knowing: these rules are IPv4 only on effectively all consumer
