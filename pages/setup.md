@@ -71,10 +71,15 @@ your callers will.
 <!-- Rob, 2026-10-06: the going-public checklist changed, so it says so. A paragraph after the card rather than inside it: a "::: from" gate nested in the gopublic block would close the block at its first ":::". Gated on firmware 1.2.2's port_map. -->
 ::: from 1.2.2
 From firmware 1.2.2 you may not have to open the router at all. The board can
-ask it to forward the port, and can test whether your router will do it
-before anything is changed, so that is worth trying before you go looking for
+ask it to forward the port, which is worth trying before you go looking for
 your router's menu. [Let the board ask your
 router](/docs/forward#or-let-the-board-ask-your-router).
+
+<!-- Firmware 1.2.3's PORTMAP TEST, moved out of 1.2.2 by Rob on 2026-10-06. Nested rather than swapped, so the 1.2.2 reader keeps a route. -->
+::: from 1.2.3
+From firmware 1.2.3 it can also test whether your router will, before
+anything is changed at all.
+:::
 :::
 
 ## Every setting

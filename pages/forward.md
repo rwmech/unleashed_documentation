@@ -18,23 +18,32 @@ this page is blunt about what it does before it tells you how.
 > what a port is, stop and read until you do. If the network belongs to your
 > employer, your landlord, your university or your parents, ask them first.
 
-<!-- Rob, 2026-10-06: "make sure documentations says something like 'Check to see if this works before you bother reserachiing your router'". It sits under the warning and not over it: the page's rule is warning before instructions, and this is a pointer rather than a shortcut past them. Firmware 1.2.2's PORTMAP TEST and the CONFIG network button are specified and not built, so this says what the test tells you and never what it draws. The button is named at its 80 column label, "Run port map test", and only that one: no short form for a 40 column form exists in any repository yet, and /docs/config names the port_map setting at both widths but the button at neither. When the firmware settles the 40 column label, add it to /docs/config beside the setting's and then say so here. -->
+<!-- Rob, 2026-10-06: "make sure documentations says something like 'Check to see if this works before you bother reserachiing your router'". It sits under the warning and not over it: the page's rule is warning before instructions, and this is a pointer rather than a shortcut past them.
+
+Two gates, not one, and the split is the point. Port mapping itself (port_map, PORTMAP) ships in firmware 1.2.2; PORTMAP TEST and the CONFIG network button that runs it were moved OUT of 1.2.2 by Rob on 2026-10-06 and are 1.2.3. So the 1.2.2 half must leave a complete route behind rather than a dangling pointer: switching the setting on and reading PORTMAP answers the same three questions, and on a connection that is not on the internet it answers them without exposing anything, because a forward made on a router that is not on the internet reaches nobody. The 1.2.3 half adds only the part that is genuinely new, asking without making a forward at all. Additive, never a swapped pair, so nothing here can leave a reader on 1.2.2 with "see above".
+
+The button is named at its 80 column label, "Run port map test", and only that one: no short form for a 40 column form exists in any repository yet, and /docs/config names the port_map setting at both widths but the button at neither. When the firmware settles the 40 column label, add it to /docs/config beside the setting's and then say so here. -->
 ::: from 1.2.2
 **Try this before you look anything up.** From firmware 1.2.2 the board can
-ask your router to set the forward up itself, and it can ask whether your
-router will do that at all without changing anything: `CONFIG network` has a
-**Run port map test** button beside the setting, and the test makes no
-forward and opens nothing.
+ask your router to set the forward up itself, which on a router that answers
+means there is no menu on this page for you to find.
 
 It is worth a keypress before an evening of research. If your router answers,
 you can [let the board do the whole
 thing](/docs/forward#or-let-the-board-ask-your-router) and there is nothing
 on this page to look up, though everything the next two sections say about
-the risks still holds, and that section says so itself. If the test reports
-that your address is not on the internet, then [no router setting of any kind
-would ever have worked](/docs/forward#two-things-that-will-stop-it-working),
-and it is much better to find that out now. If the test gets no answer at
-all, read on: forwarding the port by hand works on any router.
+the risks still holds, and that section says so itself. If the board comes
+back saying your address is not on the internet, then [no router setting of
+any kind would ever have worked](/docs/forward#two-things-that-will-stop-it-working),
+and it is much better to find that out now. If no router answers at all, read
+on: forwarding the port by hand works on any router.
+
+::: from 1.2.3
+From firmware 1.2.3 you need not even switch it on to find out. The board can
+put the question to your router without making any forward: `CONFIG network`
+has a **Run port map test** button beside the setting, and the test opens
+nothing.
+:::
 :::
 
 ## What you are doing
@@ -97,6 +106,8 @@ anybody opening a menu.
 > public, and telnet carries passwords in the clear. The only thing that
 > changes is who types the setting in.
 
+<!-- Firmware 1.2.3's PORTMAP TEST and its CONFIG network button, moved out of 1.2.2 by Rob on 2026-10-06. The whole section is the test, so the whole section is gated: on 1.2.2 a reader goes straight from the warning to "Switching it on", and "It will tell you when your ISP is in the way" below still answers the CGNAT question for them from PORTMAP. Nothing outside this gate may link this anchor. -->
+::: from 1.2.3
 ### Finding out without switching anything on
 
 The board can put the question to your router without making a forward and
@@ -110,6 +121,7 @@ three protocols it speaks, and what your outside address is. That last one is
 the one to read first, because if it is a private address then nothing on
 this page will ever work and the reason is your internet provider rather than
 your router.
+:::
 
 ### Switching it on
 
@@ -226,10 +238,17 @@ likely to waste your evening, and `PORTMAP` says **NOT on the internet** in
 those words rather than letting a working mapping look like a reachable
 board.
 
-The test says the same thing without forwarding anything, which is why it is
-worth running before you go near the router. For somebody behind a carrier
-NAT it is the whole answer rather than a shortcut: there was never a setting
-to find.
+For somebody behind a carrier NAT that is the whole answer rather than a step
+on the way: there was never a setting to find. Switching the setting on to
+learn it costs nothing either, because a forward made on a router that is not
+itself on the internet reaches nobody: that is the same fact that makes the
+answer bad news. Set it back to `no` afterwards if you like.
+
+<!-- Firmware 1.2.3's PORTMAP TEST. The paragraph above is the 1.2.2 route and stays true after 1.2.3; this adds the better one rather than replacing it. -->
+::: from 1.2.3
+From firmware 1.2.3 the test says the same thing without forwarding anything,
+which is why it is worth running before you go near the router at all.
+:::
 
 If no router answers at all, the board cannot tell you this, because there is
 no reply to read the address out of.
@@ -258,22 +277,29 @@ failures, and the second one cannot be fixed by any setting at all.
   fibre plans. Your options are asking the ISP for a public address, IPv6, or
   an outbound tunnel.
 
-<!-- This used to say "switch on the setting above", which contradicted the section two above it and the aside at the top of the page, both of which say the test answers this without opening anything. The reader who lands here from that aside is most often behind a carrier NAT, and for them the test is the whole answer rather than a first step, so it must not ask them to open a port to find out they cannot. Switching the setting on belongs after the decision, not before it. -->
+<!-- Both halves answer the same question, "is my router on the internet", and the reader who lands here from the aside at the top is most often behind a carrier NAT. On 1.2.2 the route is to switch the setting on and read PORTMAP, which is safe to recommend for exactly the reason that makes the answer bad news: a forward made on a router that is not on the internet is reachable by nobody. On 1.2.3 the test answers it with no forward at all. Additive, so the 1.2.2 reader is never left pointing at a section that is not on their page, and the anchor into the test's own section is inside the 1.2.3 half where that section exists. -->
 ::: from 1.2.2
 Both of these are a question about one number, your router's own outside
 address, and finding it usually means logging into the router. From firmware
-1.2.2 the board can read it off the router for you without opening anything:
-`PORTMAP TEST`, or the **Run port map test** button on `CONFIG network`, asks
-the router for its outside address and says whether it is on the internet at
-all. [The test makes no
-forward](/docs/forward#finding-out-without-switching-anything-on), so it is
-safe to run before you have decided anything.
+1.2.2 the board can read it off the router for you: switch [the setting
+above](/docs/forward#or-let-the-board-ask-your-router) on, and `PORTMAP`
+shows the outside address the router handed back and says whether it is on
+the internet at all.
 
 If it comes back **NOT on the internet**, you are behind one of the two above
 and that is your answer: there was never a router setting to find, and you
-have saved yourself the evening. Switching [the setting
-above](/docs/forward#or-let-the-board-ask-your-router) on is what you do once
-the test says your router will do it and you have decided to let it.
+have saved yourself the evening. Nothing of yours was exposed by asking,
+because a forward on a router that is not on the internet reaches nobody, and
+you can set the setting back to `no`.
+
+<!-- Firmware 1.2.3's PORTMAP TEST, moved out of 1.2.2 on 2026-10-06. -->
+::: from 1.2.3
+From firmware 1.2.3 you can have the same number without making a forward at
+all: `PORTMAP TEST`, or the **Run port map test** button on `CONFIG network`,
+asks the router for its outside address and nothing else. [The test makes no
+forward](/docs/forward#finding-out-without-switching-anything-on), so it is
+safe to run before you have decided anything.
+:::
 :::
 
 Also worth knowing: these rules are IPv4 only on effectively all consumer

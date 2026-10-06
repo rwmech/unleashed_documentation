@@ -12,13 +12,17 @@ to do it from.
 > This opens a door into your own network and you are responsible for what
 > comes through it. Read [the warnings](/docs/forward) first if you have not.
 
-<!-- Rob, 2026-10-06: "make sure documentations says something like 'Check to see if this works before you bother reserachiing your router'". The same paragraph on all five router pages, because a reader lands on one of them and never sees the other four. It sits under the warning box and above the first instruction: a pointer, not a shortcut past the warnings. Firmware 1.2.2's port_map and PORTMAP TEST are specified and not built, so this says what they tell you and never what they draw. -->
+<!-- Rob, 2026-10-06: "make sure documentations says something like 'Check to see if this works before you bother reserachiing your router'". The same paragraph on all five router pages, because a reader lands on one of them and never sees the other four. It sits under the warning box and above the first instruction: a pointer, not a shortcut past the warnings. Firmware 1.2.2's port_map is what the 1.2.2 half promises; PORTMAP TEST and its CONFIG network button were moved out of 1.2.2 on 2026-10-06 and are 1.2.3, so the test is its own nested gate and the 1.2.2 half still leaves a reader a complete route. Additive, never a swapped pair. This says what they tell you and never what they draw. -->
 ::: from 1.2.2
 **Before you start,** it is worth knowing that from firmware 1.2.2 the board
-can ask your router to set this up by itself, and can test whether your
-router will do it without changing anything. If your router answers, there is
+can ask your router to set this up by itself. If your router answers, there is
 nothing on this page for you to do. [Let the board ask your
 router](/docs/forward#or-let-the-board-ask-your-router).
+
+::: from 1.2.3
+From firmware 1.2.3 it can also ask whether your router will, without making
+any forward, so you can find out before you decide anything.
+:::
 :::
 
 ## eero
