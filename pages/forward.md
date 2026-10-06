@@ -18,6 +18,25 @@ this page is blunt about what it does before it tells you how.
 > what a port is, stop and read until you do. If the network belongs to your
 > employer, your landlord, your university or your parents, ask them first.
 
+<!-- Rob, 2026-10-06: "make sure documentations says something like 'Check to see if this works before you bother reserachiing your router'". It sits under the warning and not over it: the page's rule is warning before instructions, and this is a pointer rather than a shortcut past them. Firmware 1.2.2's PORTMAP TEST and the CONFIG network button are specified and not built, so this says what the test tells you and never what it draws. The button is named at its 80 column label; /docs/config carries both widths. -->
+::: from 1.2.2
+**Try this before you look anything up.** From firmware 1.2.2 the board can
+ask your router to set the forward up itself, and it can ask whether your
+router will do that at all without changing anything: `CONFIG network` has a
+**Run port map test** button beside the setting, and the test makes no
+forward and opens nothing.
+
+It is worth a keypress before an evening of research. If your router answers,
+you can [let the board do the whole
+thing](/docs/forward#or-let-the-board-ask-your-router) and there is nothing
+on this page to look up, though everything the next two sections say about
+the risks still holds, and that section says so itself. If the test reports
+that your address is not on the internet, then [no router setting of any kind
+would ever have worked](/docs/forward#two-things-that-will-stop-it-working),
+and it is much better to find that out now. If the test gets no answer at
+all, read on: forwarding the port by hand works on any router.
+:::
+
 ## What you are doing
 
 Your router blocks unsolicited traffic from the internet by default. That
@@ -41,6 +60,14 @@ you can expose something you never meant to.
 > [SSH](/docs/terminals#connect-with-ssh), which is encrypted, on the same port
 > and on its own, 6422 as shipped: forward that one too if you want visitors
 > from outside to use it with SyncTERM.
+
+<!-- Firmware 1.2.2's port_map maps both ports (src/core/portmap.h: the telnet port always, the SSH port too on a board that has one bound, and never the backup window's), so the warning above is incomplete from 1.2.2 rather than wrong. Gated. -->
+::: from 1.2.2
+Letting the board do the asking covers both: it asks for the port callers
+dial and, on a board with an SSH port of its own, for that one as well. It
+never asks for the backup window's port, which is meant to stay on your own
+network.
+:::
 
 - **You will be scanned within minutes.** Every address on the internet is
   swept continuously by automated scanners. This is normal and not personal,
@@ -69,6 +96,20 @@ anybody opening a menu.
 > open to the whole internet, you will be scanned, your address becomes
 > public, and telnet carries passwords in the clear. The only thing that
 > changes is who types the setting in.
+
+### Finding out without switching anything on
+
+The board can put the question to your router without making a forward and
+without opening anything. `CONFIG network` has a **Run port map test** button
+beside the setting, and `PORTMAP TEST` does the same thing from the prompt.
+All three protocols have a way of being asked that creates nothing, so the
+test is a question and not a trial run.
+
+It tells you three things: whether your router answers at all, which of the
+three protocols it speaks, and what your outside address is. That last one is
+the one to read first, because if it is a private address then nothing on
+this page will ever work and the reason is your internet provider rather than
+your router.
 
 ### Switching it on
 
@@ -166,6 +207,11 @@ NAT](/docs/forward#two-things-that-will-stop-it-working), the thing most
 likely to waste your evening, and `PORTMAP` says **NOT on the internet** in
 those words rather than letting a working mapping look like a reachable
 board.
+
+The test says the same thing without forwarding anything, which is why it is
+worth running before you go near the router. For somebody behind a carrier
+NAT it is the whole answer rather than a shortcut: there was never a setting
+to find.
 
 If no router answers at all, the board cannot tell you this, because there is
 no reply to read the address out of.
