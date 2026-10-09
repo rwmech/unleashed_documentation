@@ -1,0 +1,33 @@
+{
+ "source": "unleashed BBS 1.2.0-link.17 (75ae652), host build, ANSI at 80 columns, captured 2026-09-29",
+ "version": "1.2.0-link.17",
+ "caption": "typed: FORUMS, firmware 1.2.0-link.17",
+ "alt": "typed: FORUMS, at 80 columns, firmware 1.2.0-link.17: Forums 0 new messages 1 General Anything at all 2 Board News What the sysop is up to ─────────────────────────────────────────────────────────────────────────────── Nothing new since your last call. --> Enter reads what is new. # - Open a forum. ? help. Q leaves. Forums>",
+ "cols": 79,
+ "rows": [
+  " Forums                                                         0 new messages ",
+  "                                                                               ",
+  " 1 General                  Anything at all                                    ",
+  " 2 Board News               What the sysop is up to                            ",
+  "───────────────────────────────────────────────────────────────────────────────",
+  "                                                                               ",
+  "Nothing new since your last call.                                              ",
+  "                                                                               ",
+  "--> Enter reads what is new. # - Open a forum. ? help. Q leaves.               ",
+  "                                                                               ",
+  "Forums>                                                                        "
+ ],
+ "attrs": [
+  "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu",
+  "7777777777777777777777777777777777777777777777777777777777777777777777777777777",
+  "bbbfffffffffffffffffffffffff777777777777777777777777777777777777777777777777777",
+  "bbbfffffffffffffffffffffffff777777777777777777777777777777777777777777777777777",
+  "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+  "7777777777777777777777777777777777777777777777777777777777777777777777777777777",
+  "7777777777777777777777777777777777777777777777777777777777777777777777777777777",
+  "7777777777777777777777777777777777777777777777777777777777777777777777777777777",
+  "7777777777777777777777777777777777777777777777777777777777777777777777777777777",
+  "7777777777777777777777777777777777777777777777777777777777777777777777777777777",
+  "eeeeeeee77777777777777777777777777777777777777777777777777777777777777777777777"
+ ]
+}

@@ -102,6 +102,10 @@ picture of a machine of your choosing: see [skins](/docs/skins).
 
 ## Telling the board about it
 
+::: art
+shot-config-lights
+:::
+
 Log in as the sysop and type `CONFIG lights`. Switch the plugin on, set
 **Drive pin** to 13 and **Strip pin** to 14, and **Strip len** to the number
 of pixels you have. Saving puts it live. Or in the file:

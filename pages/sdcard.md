@@ -204,6 +204,10 @@ form is what the area runs under from then on.
 The SD card. On as shipped, and the sysop's alone. With no card it tries once at
 start and then costs nothing.
 
+::: art
+shot-config-sd
+:::
+
 - **CS pin**: Chip select. GPIO5 does not stop the board starting with a card
   fitted; 4 is there if you would rather use a pin with no job at boot. Takes
   0 to 33; as shipped, `5`.

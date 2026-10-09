@@ -12,6 +12,10 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 The backup window: a way to copy the board's settings, accounts and screens off
 it as one zip file, and to put a copy back, from a computer on your network.
 
+::: art
+shot-config-backup
+:::
+
 - **Port** (`backup_port`): The web port the window opens on. It cannot be
   the port callers use, which is 6400 as shipped. Takes 1 to 65535; as
   shipped, `8080`.

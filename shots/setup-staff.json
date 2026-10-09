@@ -1,8 +1,8 @@
 {
  "source": "unleashed BBS 1.2.0-link.17 (75ae652), host build, ANSI at 80 columns, captured 2026-09-29",
  "version": "1.2.0-link.17",
- "caption": "typed: CONFIG staff, firmware 1.2.0-link.17",
- "alt": "typed: CONFIG staff, at 80 columns, firmware 1.2.0-link.17: STAFF PASSWORDS ─────────────────────────────────────────────────────────────────────────────── Sysop password ******** Co-sysop 1 password ........................................................ Co-sysop 2 password ........................................................ [ Save ] [ Cancel ] Tab or arrows move, Enter is next, Space steps a choice, F1...",
+ "caption": "then the staff passwords form, by itself, firmware 1.2.0-link.17",
+ "alt": "then the staff passwords form, by itself, at 80 columns, firmware 1.2.0-link.17: STAFF PASSWORDS ─────────────────────────────────────────────────────────────────────────────── Sysop password ******** Co-sysop 1 password ........................................................ Co-sysop 2 password ........................................................ [ Save ] [ Cancel ] These stars are the published default from the install page....",
  "cols": 79,
  "rows": [
   "STAFF PASSWORDS                                                                ",
@@ -14,7 +14,7 @@
   "                                                                               ",
   "                      [ Save ]  [ Cancel ]                                     ",
   "                                                                               ",
-  " Tab or arrows move, Enter is next, Space steps a choice, F1 saves, ESC quits  "
+  " These stars are the published default from the install page. Change it now.   "
  ],
  "attrs": [
   "bbbbbbbbbbbbbbb7777777777777777777777777777777777777777777777777777777777777777",
@@ -26,6 +26,6 @@
   "7777777777777777777777777777777777777777777777777777777777777777777777777777777",
   "7777777777777777777777aaaaaaaaaa99999999997777777777777777777777777777777777777",
   "7777777777777777777777777777777777777777777777777777777777777777777777777777777",
-  "7888888888888888888888888888888888888888888888888888888888888888888888888888888"
+  "7bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
  ]
 }

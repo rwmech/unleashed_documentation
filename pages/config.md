@@ -27,6 +27,12 @@ a form.
 shot-config-board
 :::
 
+The same page on a 40 column screen, with the labels shortened to fit:
+
+::: art
+shot-config-board-40
+:::
+
 - **Tab or the arrow keys** move between fields, as the bottom line says.
 - **F1 saves.** Only the fields you changed are written, and the rest of the
   board's settings file is left exactly as it was, comments included.
@@ -39,44 +45,64 @@ shot-config-board
 - **One sysop at a time.** CONFIG is the sysop's alone: co-sysops do not get it,
   because it can change the staff passwords.
 
-These screens were captured from the board's own software, version 0.23.0,
-running on a test machine: the setup at 80 columns and the CONFIG pages at 48.
-On a wider terminal the lists are wider, and since firmware 1.1.0 a terminal
-of 80 columns or more gets longer form labels, such as **Onboard LED GPIO**
-where 40 columns say **Board LED**.
+These screens are captured from the board's own software running on a test
+machine, at 80 columns unless they say otherwise, and the firmware version is
+under each one. A terminal of 80 columns or more gets longer form labels than
+40 columns do.
 
 ## board
 
 The board's name and clock, and where callers land.
 
-- **Board** (`board_name`): The board's name. The welcome screen tells callers
-  who they are connecting to, and the directory lists the board under it. Empty
-  means the software's own name. Takes up to 40 characters; as shipped, `My
-  Board`.
+<!-- Guides 2026-09-29: the labels are the board's at 80 columns, then at 40 (the captures above, firmware 1.2.0-link.17). Silent mode, silent hours and Stop taking calls are firmware 1.1.0 (the firmware's CLAUDE.md); Sysop's account is sysop_id, the one account missed pages go to. -->
+- **Board name**, **Board** at 40 columns (`board_name`): The board's name.
+  The welcome screen tells callers who they are connecting to, and the
+  directory lists the board under it. Empty means the software's own name.
+  Takes up to 40 characters; as shipped, `My Board`.
 - **Hostname** (`hostname`): The board's name on your network, for the router's
   list of devices and for `name.local` on computers that look those up. Used
   from the next restart. Takes a to z, 0 to 9 and `-`, up to 31 characters; as
   shipped, `unleashed`.
-- **Timezone** (`tz`): The local time, as a POSIX time zone string. The number
-  is hours **west** of UTC, so US zones are positive. `UTC0` is UTC;
+- **Timezone**: The local time, picked from a list of named zones: Space steps
+  through them.
+- **POSIX TZ string**, **TZ string** at 40 columns (`tz`): The zone behind
+  that name, as a POSIX time zone string, for a zone the list does not have.
+  The number is hours **west** of UTC, so US zones are positive. `UTC0` is UTC;
   `EST5EDT,M3.2.0,M11.1.0` is US Eastern; `GMT0BST,M3.5.0/1,M10.5.0` is the UK;
   `CET-1CEST,M3.5.0,M10.5.0/3` is central Europe. Takes up to 40 characters; as
   shipped, `UTC0`.
-- **NTP** (`ntp_server`): Where the board gets the time from. Used from the
-  next restart. Takes up to 40 characters; as shipped, `pool.ntp.org`.
-- **Idle min** (`idle_minutes`): How long a caller can sit at the prompt doing
-  nothing before the board hangs up. It warns a minute before. Takes 1 to 240
-  minutes; as shipped, `20`.
-- **LED gpio** (`activity_led_gpio`): The pin of an LED that blinks with
-  network traffic. 2 is the blue LED on the common DOIT-style dev boards. Takes
-  0 to 39; as shipped, `2`.
-- **Land on** (`landing`): Where a caller goes after logging in, unless their
-  own account says otherwise. Takes `main`, `chat` or `forums`; as shipped,
-  `main`.
+- **NTP server**, **NTP** at 40 columns (`ntp_server`): Where the board gets
+  the time from. Used from the next restart. Takes up to 40 characters; as
+  shipped, `pool.ntp.org`.
+- **Idle minutes**, **Idle min** at 40 columns (`idle_minutes`): How long a
+  caller can sit at the prompt doing nothing before the board hangs up. It
+  warns a minute before. Takes 1 to 240 minutes; as shipped, `20`.
+- **Onboard LED GPIO**, **Board LED** at 40 columns (`activity_led_gpio`): The
+  pin of an LED that blinks with network traffic. 2 is the blue LED on the
+  common DOIT-style dev boards. Takes 0 to 39; as shipped, `2`.
+- **Land on after login**, **Land on** at 40 columns (`landing`): Where a
+  caller goes after logging in, unless their own account says otherwise.
+  Takes `main`, `chat` or `forums`; as shipped, `main`.
+- **Sysop's account**, **Sysop** at 40 columns (`sysop_id`): The one account
+  a missed page to the sysop goes to as mail. Empty means the last account to
+  become the sysop.
+- **Silent: lights off**, **Silent** at 40 columns: Every light the board
+  controls off, the drive light, the strip and the S3's screen included. Each
+  light's own settings are kept for when silent is off again. As shipped,
+  `no`.
+- **Silent hours from** and **until**, **Silent at** and **Silent to** at 40
+  columns: A quiet time every day, by the board's own clock. Empty means none.
+- **Stop taking calls**, **Closed** at 40 columns (`closed`): Callers get the
+  busy message, apart from the sysop. A new board starts closed until its
+  sysop opens it.
 
 ## limits
 
 How long callers can stay.
+
+::: art
+shot-config-limits
+:::
 
 - **Per call** (`call_minutes`): The longest one call can last. Takes 1 to 1440
   minutes; as shipped, `60`.
@@ -98,6 +124,10 @@ level has as shipped, means no idle hang-up and no call or daily limit.
 
 Who can get in.
 
+::: art
+shot-config-accounts
+:::
+
 - **Sign-ups** (`self_register`): Whether somebody with a handle the board has
   not seen is offered **[R]egister**. With `no`, only staff can create
   accounts, from the `USERS` manager. Takes yes or no; as shipped, `yes`.
@@ -115,6 +145,10 @@ The backup window's page, and how to use it, are on [backups](/docs/backups).
 
 The three staff passwords. A caller becomes staff by typing `BYE` and one of
 these at the prompt.
+
+::: art
+shot-config-staff
+:::
 
 - **Sysop** (`sysop_password`): Moves you to the sysop node, with every
   permission, CONFIG included. Takes up to 32 characters, case-sensitive; as
@@ -159,6 +193,10 @@ The network the board joins.
 
 The network the board joins, and the port callers dial. `CONFIG network` opens
 it, and so does `CONFIG wifi`, its name before firmware 1.1.0.
+
+::: art
+shot-config-network
+:::
 
 - **Network** (`wifi_ssid`): The name of the Wi-Fi network. Takes up to 32
   characters; set to what you chose when installing.

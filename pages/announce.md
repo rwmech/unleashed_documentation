@@ -37,6 +37,10 @@ Open it again and the mark goes with the next announce.
 Every plugin page starts with the same four fields, which [the plugin
 pages](/docs/config#the-plugin-pages) explain. Then:
 
+::: art
+shot-config-announce
+:::
+
 <!-- The same list twice, so each is one list: firmware 1.1.0 relabels Port as Outside (copy-1.1.0 section 5). Edit both until a 1.1.0 release is on disk, then drop the "until" one. -->
 ::: until 1.1.0
 - **Board**: The name the directory will show. It is the Board field on the

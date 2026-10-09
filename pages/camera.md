@@ -64,6 +64,10 @@ camera-snap
 
 Type `SNAPSHOT`, or `SNAP` for short, at the main prompt.
 
+::: art
+shot-snapshot
+:::
+
 - **It takes the picture straight away.** There is no countdown: whoever typed
   it is somewhere else, not in front of the lens. On a board with a GC0308 the
   photo takes a few seconds to save, because the board encodes it itself.
@@ -127,6 +131,12 @@ caller, so you can find your own pictures.
   calling back under another name does not start the count again.
 - **The sysop is not counted.**
 
+The limits, and how long photos are kept, are on `CONFIG photos`:
+
+::: art
+shot-config-photos
+:::
+
 ## Before you point it at anything
 
 A camera callers can use is a window into the room it is in, open to whoever
@@ -155,6 +165,10 @@ Low risk is not no risk, and the difference is what is in frame.
 
 `CONFIG camera`, the sysop's alone. The flash, the timelapse and the
 picture adjustments are pages of their own inside it.
+
+::: art
+shot-config-camera
+:::
 
 | Setting | What it does | As shipped |
 |---|---|---|

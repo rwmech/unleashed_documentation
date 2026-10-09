@@ -1,0 +1,25 @@
+{
+ "source": "unleashed BBS 1.2.0-link.17 (75ae652), host build, ANSI at 80 columns, captured 2026-09-29",
+ "version": "1.2.0-link.17",
+ "caption": "typed: INFO, firmware 1.2.0-link.17",
+ "alt": "typed: INFO, at 80 columns, firmware 1.2.0-link.17: [S] Sysop: info Information 1 page 0 House rules ─────────────────────────────────────────────────────────────────────────────── INFO n reads one. INFO n EDIT writes. [S] Sysop:",
+ "cols": 79,
+ "rows": [
+  "[S] Sysop: info                                                                ",
+  " Information                                                            1 page ",
+  "0  House rules                                                                 ",
+  "───────────────────────────────────────────────────────────────────────────────",
+  "INFO n reads one. INFO n EDIT writes.                                          ",
+  "                                                                               ",
+  "[S] Sysop:                                                                     "
+ ],
+ "attrs": [
+  "ccccbbbbb77ffff7777777777777777777777777777777777777777777777777777777777777777",
+  "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu",
+  "bbbfffffffffff77777777777777777777777777777777777777777777777777777777777777777",
+  "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+  "7777777777777777777777777777777777777777777777777777777777777777777777777777777",
+  "7777777777777777777777777777777777777777777777777777777777777777777777777777777",
+  "ccccbbbbb7777777777777777777777777777777777777777777777777777777777777777777777"
+ ]
+}
