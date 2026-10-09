@@ -11,12 +11,20 @@ The message boards, in topic areas. They need a card, and they are **off** as
 shipped, so the topics can be set up first. The card is on [adding an SD
 card](/docs/sdcard).
 
+::: art
+shot-forums-list
+:::
+
 ## Settings
 
 Every plugin page starts with the same four fields, which [the plugin
 pages](/docs/config#the-plugin-pages) explain. Read, Write and Admin are
 `all`, `users` and `co1`. CONFIG offers four topics, each a button like a file
 area:
+
+::: art
+shot-config-forums
+:::
 
 | Field | What it does |
 |---|---|

@@ -1,0 +1,41 @@
+{
+ "source": "unleashed BBS 1.2.0-link.17 (75ae652), host build, ANSI at 80 columns, captured 2026-09-29",
+ "version": "1.2.0-link.17",
+ "caption": "typed: CONFIG photos, on a camera board, firmware 1.2.0-link.17",
+ "alt": "typed: CONFIG photos, on a camera board, at 80 columns, firmware 1.2.0-link.17: PHOTOS ─────────────────────────────────────────────────────────────────────────────── Default camera Snaps an hour 10...................................................... Snaps a day 20...................................................... Keep photos, days 30...................................................... Keep at most...",
+ "cols": 79,
+ "rows": [
+  "PHOTOS                                                                         ",
+  "───────────────────────────────────────────────────────────────────────────────",
+  "                                                                               ",
+  " Default camera                                                                ",
+  " Snaps an hour        10...................................................... ",
+  " Snaps a day          20...................................................... ",
+  " Keep photos, days    30...................................................... ",
+  " Keep at most         200..................................................... ",
+  " Card kept free, MB   ........................................................ ",
+  " Keep timelapse, days 7....................................................... ",
+  " Timelapse at most    200..................................................... ",
+  "                                                                               ",
+  "                      [ Save ]  [ Cancel ]                                     ",
+  "                                                                               ",
+  " The camera SNAPSHOT uses, by a name CAMERA lists. Blank: the built-in one.    "
+ ],
+ "attrs": [
+  "bbbbbb7777777777777777777777777777777777777777777777777777777777777777777777777",
+  "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+  "7777777777777777777777777777777777777777777777777777777777777777777777777777777",
+  "7bbbbbbbbbbbbbbbbbbbb7vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv7",
+  "7cccccccccccccccccccc7778888888888888888888888888888888888888888888888888888887",
+  "7cccccccccccccccccccc7778888888888888888888888888888888888888888888888888888887",
+  "7cccccccccccccccccccc7778888888888888888888888888888888888888888888888888888887",
+  "7cccccccccccccccccccc7777888888888888888888888888888888888888888888888888888887",
+  "7cccccccccccccccccccc7888888888888888888888888888888888888888888888888888888887",
+  "7cccccccccccccccccccc7788888888888888888888888888888888888888888888888888888887",
+  "7cccccccccccccccccccc7777888888888888888888888888888888888888888888888888888887",
+  "7777777777777777777777777777777777777777777777777777777777777777777777777777777",
+  "7777777777777777777777aaaaaaaaaa99999999997777777777777777777777777777777777777",
+  "7777777777777777777777777777777777777777777777777777777777777777777777777777777",
+  "7bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+ ]
+}

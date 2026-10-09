@@ -1,0 +1,35 @@
+{
+ "source": "unleashed BBS 1.2.0-link.17 (75ae652), host build, ANSI at 40 columns, captured 2026-09-29",
+ "version": "1.2.0-link.17",
+ "caption": "typed: FORUMS, firmware 1.2.0-link.17",
+ "alt": "typed: FORUMS, at 40 columns, firmware 1.2.0-link.17: Forums 0 new messages 1 General 2 Board News ─────────────────────────────────────── Nothing new since your last call. --> Enter reads what is new. # - Open a forum. ? help. Q leaves. Forums>",
+ "cols": 39,
+ "rows": [
+  " Forums                 0 new messages ",
+  "                                       ",
+  " 1 General                             ",
+  " 2 Board News                          ",
+  "───────────────────────────────────────",
+  "                                       ",
+  "Nothing new since your last call.      ",
+  "                                       ",
+  "--> Enter reads what is new. # - Open a",
+  "    forum. ? help. Q leaves.           ",
+  "                                       ",
+  "Forums>                                "
+ ],
+ "attrs": [
+  "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu",
+  "777777777777777777777777777777777777777",
+  "bbbfffffff77777777777777777777777777777",
+  "bbbffffffffff77777777777777777777777777",
+  "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+  "777777777777777777777777777777777777777",
+  "777777777777777777777777777777777777777",
+  "777777777777777777777777777777777777777",
+  "777777777777777777777777777777777777777",
+  "777777777777777777777777777777777777777",
+  "777777777777777777777777777777777777777",
+  "eeeeeeee7777777777777777777777777777777"
+ ]
+}

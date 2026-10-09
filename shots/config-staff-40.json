@@ -1,0 +1,31 @@
+{
+ "source": "unleashed BBS 1.2.0-link.17 (75ae652), host build, ANSI at 40 columns, captured 2026-09-29",
+ "version": "1.2.0-link.17",
+ "caption": "typed: CONFIG staff, firmware 1.2.0-link.17",
+ "alt": "typed: CONFIG staff, at 40 columns, firmware 1.2.0-link.17: STAFF PASSWORDS ─────────────────────────────────────── Sysop ******** Co-sysop1 ........................... Co-sysop2 ........................... [ Save ] [ Cancel ] Tab/arrows move, F1 saves, ESC quits",
+ "cols": 39,
+ "rows": [
+  "STAFF PASSWORDS                        ",
+  "───────────────────────────────────────",
+  "                                       ",
+  " Sysop     ********                    ",
+  " Co-sysop1 ........................... ",
+  " Co-sysop2 ........................... ",
+  "                                       ",
+  "           [ Save ]  [ Cancel ]        ",
+  "                                       ",
+  " Tab/arrows move, F1 saves, ESC quits  "
+ ],
+ "attrs": [
+  "bbbbbbbbbbbbbbb777777777777777777777777",
+  "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+  "777777777777777777777777777777777777777",
+  "7bbbbbbbbb7vvvvvvvvvvvvvvvvvvvvvvvvvvv7",
+  "7ccccccccc78888888888888888888888888887",
+  "7ccccccccc78888888888888888888888888887",
+  "777777777777777777777777777777777777777",
+  "77777777777aaaaaaaaaa999999999977777777",
+  "777777777777777777777777777777777777777",
+  "788888888888888888888888888888888888888"
+ ]
+}

@@ -62,6 +62,32 @@ and the name is µnleashed, with its micro sign, outside code.
 Every guide opens with a comment carrying its licence line, the same five
 lines as `pages/index.md`.
 
+## The screens
+
+Every capture in `shots/` comes from one command, run once a firmware
+release, in WSL or Linux:
+
+```sh
+git -C <firmware repo> worktree add --detach /tmp/fw origin/main
+sh shots/capture/capture.sh /tmp/fw
+```
+
+It builds the firmware's host boards, stands each one up on 127.0.0.1,
+drives a session through every screen the guides show (`capture.py`, at 80
+columns and again at 40), and writes `shots/*.json` stamped with that
+firmware's version, replacing the old set. A new screen is a line in
+`capture.py`'s scenes and one in `tojson.py`'s captions, then `::: art` with
+`shot-<name>` on a page: the directory draws any `shots/*.json` by its file
+name, so nothing has to be registered there.
+
+**Nothing checks that a capture is current.** Each one carries the firmware
+version it came from, in its own `version` field and in the caption drawn
+under the glass, so a stale screen says so rather than lying quietly, but no
+test compares that with the newest release. Re-run the command above at every
+firmware release, and read a page's captures against the board before
+trusting them: a settings page that has since gained a row is not merely old,
+it is wrong, and a reader will look for a field that is not there.
+
 ## Testing
 
 ```sh

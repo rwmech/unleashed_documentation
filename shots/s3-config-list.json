@@ -1,11 +1,10 @@
 {
  "source": "unleashed BBS 1.2.0-link.17 (75ae652), host build, ANSI at 80 columns, captured 2026-09-29",
  "version": "1.2.0-link.17",
- "caption": "typed: CONFIG, firmware 1.2.0-link.17",
- "alt": "typed: CONFIG, at 80 columns, firmware 1.2.0-link.17: Settings CONFIG page board name, clock, LED, landing, silent limits minutes per call and per day accounts sign-ups and guest calls backup port, how long it stays open staff sysop and co-sysop passwords network Wi-Fi and port, next restart photos SNAPSHOT's default camera sats the sats; CONFIG sat <name> opens one sd plugin: SD card files plugin: File...",
+ "caption": "typed: CONFIG, on an ESP32-S3 board, firmware 1.2.0-link.17",
+ "alt": "typed: CONFIG, on an ESP32-S3 board, at 80 columns, firmware 1.2.0-link.17: board name, clock, LED, landing, silent limits minutes per call and per day accounts sign-ups and guest calls backup port, how long it stays open staff sysop and co-sysop passwords network Wi-Fi and port, next restart photos SNAPSHOT's default camera sats the sats; CONFIG sat <name> opens one sd plugin: SD card files plugin: File areas forums plugin:...",
  "cols": 79,
  "rows": [
-  " Settings                                                          CONFIG page ",
   " board     name, clock, LED, landing, silent                                   ",
   " limits    minutes per call and per day                                        ",
   " accounts  sign-ups and guest calls                                            ",
@@ -23,6 +22,7 @@
   " serial    plugin: Serial bridge                                               ",
   " announce  plugin: Directory listing                                           ",
   " lights    plugin: Disk light and strip                                        ",
+  " panel     plugin: Status display                                              ",
   " doors     plugin: Doors on the unleashed l                                    ",
   " link      plugin: The unleashed link (ESP-                                    ",
   "───────────────────────────────────────────────────────────────────────────────",
@@ -31,7 +31,7 @@
   "[S] Sysop:                                                                     "
  ],
  "attrs": [
-  "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu",
+  "bbbbbbbbbbb77777777777777777777777777777777777777777777777777777777777777777777",
   "bbbbbbbbbbb77777777777777777777777777777777777777777777777777777777777777777777",
   "bbbbbbbbbbb77777777777777777777777777777777777777777777777777777777777777777777",
   "bbbbbbbbbbb77777777777777777777777777777777777777777777777777777777777777777777",

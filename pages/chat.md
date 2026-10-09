@@ -10,10 +10,18 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 The chat room, and the messages callers leave each other. On as shipped, and
 anybody may talk, guests included.
 
+::: art
+shot-chat-line
+:::
+
 ## Settings
 
 Every plugin page starts with the same four fields, which [the plugin
 pages](/docs/config#the-plugin-pages) explain.
+
+::: art
+shot-config-chat
+:::
 
 - **room**: The room's name. Takes up to 19 characters; as shipped, `Main`.
 - **rate**: How many lines a minute one caller may send, with a burst of 8.

@@ -23,11 +23,21 @@ for SyncTERM 1.9 and older, which wait for the board to speak first:
   off, and SSH still works on **Port**. As shipped, `6422`. It is on the
   network page of [CONFIG](/docs/config#network).
 
+::: art
+shot-s3-config-network
+:::
+
 ## The board's keys
 
 The board makes its own host keys the first time it starts. An SSH app asks
 you to trust a board's key on the first call; to check it is really your
 board, compare the fingerprint the app shows with the one `SYS` shows the
 sysop. The keys are not in a backup.
+
+`HARDWARE` shows the sysop the same fingerprints, at its foot:
+
+::: art
+shot-s3-hardware
+:::
 
 Back to [Set up your BBS](/docs/setup).

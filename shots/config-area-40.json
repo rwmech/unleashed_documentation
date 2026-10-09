@@ -1,0 +1,37 @@
+{
+ "source": "unleashed BBS 1.2.0-link.17 (75ae652), host build, ANSI at 40 columns, captured 2026-09-29",
+ "version": "1.2.0-link.17",
+ "caption": "typed: CONFIG files, then Enter on Area 1, firmware 1.2.0-link.17",
+ "alt": "typed: CONFIG files, then Enter on Area 1, at 40 columns, firmware 1.2.0-link.17: FILE AREA 1 ─────────────────────────────────────── Path pub/c64 Name C64 Downloads.............. Read all........................ Upload staff...................... Download all........................ Delete sysop...................... [ Save ] [ Cancel ] Tab/arrows move, F1 saves, ESC quits",
+ "cols": 39,
+ "rows": [
+  "FILE AREA 1                            ",
+  "───────────────────────────────────────",
+  "                                       ",
+  " Path      pub/c64                     ",
+  " Name      C64 Downloads.............. ",
+  " Read      all........................ ",
+  " Upload    staff...................... ",
+  " Download  all........................ ",
+  " Delete    sysop...................... ",
+  "                                       ",
+  "           [ Save ]  [ Cancel ]        ",
+  "                                       ",
+  " Tab/arrows move, F1 saves, ESC quits  "
+ ],
+ "attrs": [
+  "bbbbbbbbbbb7777777777777777777777777777",
+  "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+  "777777777777777777777777777777777777777",
+  "7bbbbbbbbb7vvvvvvvvvvvvvvvvvvvvvvvvvvv7",
+  "7ccccccccc77777777777777888888888888887",
+  "7ccccccccc77778888888888888888888888887",
+  "7ccccccccc77777788888888888888888888887",
+  "7ccccccccc77778888888888888888888888887",
+  "7ccccccccc77777788888888888888888888887",
+  "777777777777777777777777777777777777777",
+  "77777777777aaaaaaaaaa999999999977777777",
+  "777777777777777777777777777777777777777",
+  "788888888888888888888888888888888888888"
+ ]
+}

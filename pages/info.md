@@ -10,11 +10,19 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 The ten information pages, which callers read with `INFO` and from the chat room
 with `/i`. On as shipped: anybody may read them, and only the sysop may write.
 
+::: art
+shot-info-list
+:::
+
 ## Settings
 
 Every plugin page starts with the same four fields, which [the plugin
 pages](/docs/config#the-plugin-pages) explain. CONFIG has a button for each of
 Page 0 to Page 9:
+
+::: art
+shot-config-info
+:::
 
 | Field | What it does |
 |---|---|
