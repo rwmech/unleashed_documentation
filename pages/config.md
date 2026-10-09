@@ -13,8 +13,9 @@ laptop, a text editor or a reflash.
 
 ## How CONFIG works
 
-Type `CONFIG` on its own and the board lists its settings pages: six of its own,
-then one for each plugin, which is a feature the board can switch on or off.
+Type `CONFIG` on its own and the board lists its settings pages: seven of its
+own, one for the sats, then one for each plugin, which is a feature the board
+can switch on or off.
 
 ::: art
 shot-config-list

@@ -4,7 +4,8 @@
 ===========================================================================
 File:         shots/capture/vt.py
 Purpose:      A small ANSI screen model for turning a captured session into
-              site art. See shots/capture/webshots.sh.
+              site art. See shots/capture/capture.sh, which runs it through
+              tojson.py (webshots.sh until the captures moved here).
 
 Copyright 2026 - Robert Mech
 License:      GNU General Public License v3 or later

@@ -13,6 +13,7 @@ Usage:        capture.py <firmware checkout> <capture dir> <port> <mode>
                       config  CONFIG's pages and the callers' views, at 80
                               columns and again at 40
                       camera  a camera board's pages, at 80 columns
+                      s3      an ESP32-S3 board's: SSH's port and HARDWARE
 
 Nothing here talks to anything but 127.0.0.1. Each mode is a list of
 scenes: a name, the keys that bring the screen up, how long it takes to
